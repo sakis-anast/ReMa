@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState} from "react";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
@@ -8,9 +8,32 @@ export default function App() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  let [result, setResult] = useState("");
 
   const onSubmit = (data) => {
     console.log(data);
+    var res = 0
+    for(let key in data){
+      if(data[key] === "Yes" || data[key] === "Strong" ){
+           res += 2
+      } else if (data[key] === "Not fully" || data[key] === "Average" ){
+        res++
+      }
+    }if (res <=4){
+      setResult("Physical / No remote")
+    }else if (res<=8){
+      setResult("Hybrid")
+
+    }else if (res<=12){
+      setResult("Remote allowed")
+
+    }else if (res<=16){
+      setResult("Remote first")
+
+    }else {
+      setResult("Remote only")
+
+    }console.log(result)
   };
 
   return (
