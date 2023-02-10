@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Login({setLoggedIn }) {
-  // const logo = require("../logo_transparent.png");
   const navigate = useNavigate();
 
   //user input values
@@ -17,27 +16,26 @@ function Login({setLoggedIn }) {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 
-// if the user already log in go to the chat area 
-  useEffect(() => {
-    if (localStorage.getItem("user")) {
-      navigate("/");
-    }
-  }, );
+
 //authenticate the user and passing his data to the local storage
   const submitHandler = async (event) => {
     event.preventDefault();
       const { username, password } = values;
       await axios
-        .post("http://localhost:3001/users/login", { username, password })
-        .then(({ data }) => {
-          if (data.message === true) {
-            localStorage.setItem("user", JSON.stringify(data.user));
-            navigate("/");
-            setLoggedIn(true)
-          } else {
-            alert(data.message);
-          }
-        });
+      .post("http://localhost:3636/user/login", {
+        username,
+        password,
+      })
+      .then(({ data }) => {
+        console.log(data);
+        if (data.token) {
+          localStorage.setItem("token", data.token);
+          navigate("/");
+          setLoggedIn(true);
+        } else {
+         alert(data.message)
+        }
+      });
   };
 
   return (

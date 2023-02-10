@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom";
-const Navbar = ({loggedIn}) => {
+import { Link , useNavigate } from "react-router-dom";
+const Navbar = ({loggedIn , setLoggedIn}) => {
+  const navigate = useNavigate();
 
+  const logOut = () => {
+    setLoggedIn(false);
+    localStorage.clear();
+    navigate("/")
+  };
   return (
     <nav className="navbar">
       {!loggedIn ? (
@@ -35,64 +41,16 @@ const Navbar = ({loggedIn}) => {
 <button className="dropbtn">Profile
 </button>
 <div className="dropdown-content">
-  <a href="#">Account</a>
-  <a href="#">View Survey</a>
-  <a href="#">Logout</a>
+<Link to="/profile"> Profile</Link>
+<Link to="/answers"> Your Answers</Link>
+  <button onClick={() => {
+                logOut();
+              }}>Logout</button>
 </div>
 </div>
 <Link to="/survey"> Survey</Link>
 </div>
 )}
-
-      {/* <div className="container">
-        <div className="logo"></div>
-        <div className="nav-elements">
-          {loggedIn ? (
-            <ul>
-              <li>
-              <Link to="/"> Project</Link>
-              </li>
-              <li>
-                Partners
-              </li>
-              <li>
-              <Link to="/contact"> Contact Us</Link>
-              </li>
-
-              <li>
-                Profile
-              </li>
-              <li>
-                Survey
-              </li>
-              <li>
-                Logout
-              </li>
-            </ul>
-          ) : (
-            <ul>
-              <li>
-              <Link to="/"> Project</Link>
-              </li>
-              <li>
-                Partners
-              </li>
-              <li>
-              <Link to="/contact"> Contact Us</Link>
-              </li>
-              <li >
-              <Link to="/login"> Login</Link>
-
-                            
-               </li>
-              <li>
-              <Link to="/signup"> Sign Up</Link>
-
-              </li>
-            </ul>
-          )}
-        </div>
-      </div> */}
     </nav>
   );
 };

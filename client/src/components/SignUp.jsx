@@ -1,14 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-function SignUp() {
+function SignUp({loggedIn}) {
   const navigate = useNavigate();
-// if the user already log in go to the chat area 
-  useEffect(() => {
-    if (localStorage.getItem("user")) {
-      navigate("/");
-    }
-  });
+
 
   //user input values
   let [values, setValues] = useState({
@@ -27,14 +22,15 @@ function SignUp() {
     event.preventDefault();
       const { username, email, password } = values;
       await axios
-        .post("http://localhost:3001/users/signup", {
+        .post("http://localhost:3636/user/signup", {
           username,
           email,
           password,
         })
         .then(({ data }) => {
-          if (data.message === true) {
+          if (data.message === "New User Created") {
             navigate("/login");
+            alert(data.message)
           } else {
             alert(data.message);
           }
