@@ -1,39 +1,73 @@
-import React , {useState} from "react";
+import React , {useState , useEffect} from "react";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import {  useNavigate } from "react-router-dom";
+import axios from "axios";
 
-export default function App() {
+export default function App({loggedIn}) {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  let [result, setResult] = useState("");
+  // const [result, setResult] = useState("");
 
-  const onSubmit = (data) => {
+  useEffect(() => {
+    if(!loggedIn){
+      navigate("/");
+    }
+  },[]);
+  const onSubmit = async(data) => {
     console.log(data);
-    var res = 0
+    let res = 0
     for(let key in data){
       if(data[key] === "Yes" || data[key] === "Strong" ){
            res += 2
       } else if (data[key] === "Not fully" || data[key] === "Average" ){
         res++
       }
-    }if (res <=4){
-      setResult("Physical / No remote")
-    }else if (res<=8){
-      setResult("Hybrid")
+    }
+    // if (res <=4){
+    //   setResult("Physical / No remote")
+    // }else if (res<=8){
+    //   setResult("Hybrid")
 
-    }else if (res<=12){
-      setResult("Remote allowed")
+    // }else if (res<=12){
+    //   setResult("Remote allowed")
 
-    }else if (res<=16){
-      setResult("Remote first")
+    // }else if (res<=16){
+    //   setResult("Remote first")
 
-    }else {
-      setResult("Remote only")
+    // }else {
+    //   setResult("Remote only")
 
-    }console.log(result)
+    // }console.log(result)
+    await axios
+    .post("http://localhost:3636/survey", {
+      industry : data.industry,
+    location :data.location,
+    size :data.stuff,
+    currentStructure: data.current,
+    bestStructure: data.best,
+    q1: data.q1,
+    q2: data.q2,
+    q3: data.q3,
+    q4: data.q4,
+    q5: data.q5,
+    q6: data.q6,
+    q7: data.q7,
+    q8: data.q8,
+    q9: data.q9,
+    q10: data.q10,
+    comments : data.comment,
+    result: res,
+    })
+    .then(({ data }) => {
+      console.log(data);
+     
+    });
   };
 
   return (

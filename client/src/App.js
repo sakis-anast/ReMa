@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/signup" element={<SignUp/>}></Route>
-        <Route path="/survey" element={<Survey />}></Route>
+        <Route path="/survey" element={<Survey  loggedIn={loggedIn}/>}></Route>
         <Route
           path="/login"
           element={<Login setLoggedIn={setLoggedIn}/>}
@@ -31,8 +31,8 @@ function App() {
         <Route path="/ldi" element={<Ldi />}></Route>
         <Route path="/Metalaxis" element={<Metalaxis />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
-        <Route path="/answers" element={<Answers />}></Route>
+        <Route path="/profile" element={<Profile  loggedIn={loggedIn}/>}></Route>
+        <Route path="/answers" element={<Answers  loggedIn={loggedIn}/>}></Route>
       </Routes>
     </BrowserRouter>
   );
