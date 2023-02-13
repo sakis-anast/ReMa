@@ -70,7 +70,7 @@ export default function App({loggedIn , user , setLoggedIn}) {
      
     });
     alert("your answers have been saved")
-    navigate("/")
+    // navigate("/")
     setLoggedIn(true)
   };
 

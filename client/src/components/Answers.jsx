@@ -1,6 +1,12 @@
 import {  useNavigate } from "react-router-dom";
-import React , {useState , useEffect} from "react";
+import React , {useState , useEffect , useRef} from "react";
+import { useReactToPrint } from 'react-to-print';
 import axios from "axios";
+import {RemoteOnly} from "./RemoteOnly";
+import {RemoteFirst} from "./RemoteFirst";
+import {RemoteAllowed} from "./RemoteAllowed";
+import {Hybrid} from "./Hybrid";
+import {Physical} from "./Physical";
 
 function Answers({loggedIn , answers}) {
   const navigate = useNavigate();
@@ -12,6 +18,11 @@ function Answers({loggedIn , answers}) {
   async function  remove(id){
 await axios.delete("http://localhost:3636/survey/"+id)
 }
+
+const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
     return (
       <>
       {answers &&
@@ -75,7 +86,19 @@ await axios.delete("http://localhost:3636/survey/"+id)
          result : {answers.result}
        </div>
        <div>
-         Action Plan :
+        
+       
+      <button onClick={handlePrint}>Action Plan</button>
+      {answers.result > 16 &&
+      < RemoteOnly ref={componentRef} />}
+      {answers.result > 12 && answers.result <=16 &&
+      < RemoteFirst ref={componentRef} />}
+      {answers.result >8 && answers.result <=12 &&
+      < RemoteAllowed ref={componentRef} />}
+      {answers.result > 4 && answers.result <=8 &&
+      < Hybrid ref={componentRef} />}
+       {answers.result <= 4 &&
+      < Physical ref={componentRef} />}
        </div>
        <button onClick={() => {
                           remove(answers._id);
