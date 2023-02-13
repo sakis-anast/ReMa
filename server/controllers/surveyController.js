@@ -1,8 +1,14 @@
 const Survey = require("../modules/surveyModule");
 
 const getSurvey = async (req, res) => {
+  try{
   let survey = await Survey.find({ owner: req.body.owner });
-  res.send(survey);
+  if (survey){
+  res.send(survey);}
+}catch{
+  res.send({message : "no survey"})
+}
+
 };
 const addSurvey = async (req, res) => {
   let newSurvey = new Survey(

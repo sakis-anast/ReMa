@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState , useEffect} from "react";
+import axios from "axios";
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Navbar from "./components/Navbar";
 //importing components
@@ -15,14 +16,45 @@ import Profile from "./components/Profile";
 import Answers from "./components/Answers";
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState("");
+  const [answers, setAnswers] = useState("");
 
+  useEffect(() => {
+    if(localStorage.getItem("token")){
+      if (localStorage.getItem("token")) {
+        axios
+          .post("http://localhost:3636/user/verify", {
+            token: localStorage.getItem("token"),
+          })
+          .then(({ data }) => {
+            setUser(data);
+            setLoggedIn(true)
+          })
+          .catch((err) => console.error("Error:", err));
+      }
+    }
+    console.log(user)
+  },[loggedIn]);
+
+  console.log(answers)
+  useEffect(() => {
+    if(loggedIn){
+    axios
+      .post("http://localhost:3636/survey/get", { owner: user._id })
+      .then(({ data }) => {
+        if (data.message !== "no survey"){
+        setAnswers(data);}
+      });
+      }console.log(answers);
+  }
+  ,[loggedIn]);
   return (
     <BrowserRouter>
       <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/signup" element={<SignUp/>}></Route>
-        <Route path="/survey" element={<Survey  loggedIn={loggedIn}/>}></Route>
+        <Route path="/survey" element={<Survey  loggedIn={loggedIn} user ={user} setLoggedIn={setLoggedIn}/>}></Route>
         <Route
           path="/login"
           element={<Login setLoggedIn={setLoggedIn}/>}
@@ -31,8 +63,8 @@ function App() {
         <Route path="/ldi" element={<Ldi />}></Route>
         <Route path="/Metalaxis" element={<Metalaxis />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/profile" element={<Profile  loggedIn={loggedIn}/>}></Route>
-        <Route path="/answers" element={<Answers  loggedIn={loggedIn}/>}></Route>
+        <Route path="/profile" element={<Profile  loggedIn={loggedIn}  user ={user}/>}></Route>
+        <Route path="/answers" element={<Answers  loggedIn={loggedIn}  user ={user} answers={answers}/>}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -1,7 +1,7 @@
 import {  useNavigate } from "react-router-dom";
 import React , {useState , useEffect} from "react";
 
-function Profile({loggedIn}) {
+function Profile({loggedIn , user}) {
   const navigate = useNavigate();
   useEffect(() => {
     if(!loggedIn){
@@ -11,8 +11,12 @@ function Profile({loggedIn}) {
     return (
       <>
         <div>
-       Profile
+       Name : {user.username}
         </div>
+        <div>
+          Email: {user.email}
+        </div>
+        <button>delete profile</button>
       </>
     );
   }

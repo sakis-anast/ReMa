@@ -21,7 +21,7 @@ const Navbar = ({loggedIn , setLoggedIn}) => {
     <Link to="/ecte"> ECTE</Link>
     </div>
   </div>
-  <Link to="/contact"> Contact</Link>
+  <Link to="/contact"> Contact Us</Link>
   <Link to="/signup"> Sign Up</Link>
   <Link to="/login"> Login</Link>
 </div>):(
@@ -36,7 +36,7 @@ const Navbar = ({loggedIn , setLoggedIn}) => {
     <Link to="/ecte"> ECTE</Link>
     </div>
 </div>
-<Link to="/contact"> Contact</Link>
+<Link to="/contact"> Contact Us</Link>
 <div className="dropdown">
 <button className="dropbtn">Profile
 </button>

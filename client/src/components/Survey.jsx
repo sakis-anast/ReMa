@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import {  useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export default function App({loggedIn}) {
+export default function App({loggedIn , user , setLoggedIn}) {
   const navigate = useNavigate();
 
   const {
@@ -63,11 +63,15 @@ export default function App({loggedIn}) {
     q10: data.q10,
     comments : data.comment,
     result: res,
+    owner : user._id
     })
     .then(({ data }) => {
       console.log(data);
      
     });
+    alert("your answers have been saved")
+    navigate("/")
+    setLoggedIn(true)
   };
 
   return (
