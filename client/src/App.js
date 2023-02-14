@@ -4,6 +4,7 @@ import axios from "axios";
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Navbar from "./components/Navbar";
 //importing components
+import  "./style/Style.scss";
 import SignUp from "./components/SignUp";
 import Survey from "./components/Survey";
 import Login from "./components/Login";
@@ -50,7 +51,7 @@ function App() {
   ,[loggedIn]);
   return (
     <BrowserRouter>
-      <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} setAnswers={setAnswers} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/signup" element={<SignUp/>}></Route>

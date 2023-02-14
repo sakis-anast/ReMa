@@ -1,10 +1,12 @@
 import { Link , useNavigate } from "react-router-dom";
-const Navbar = ({loggedIn , setLoggedIn}) => {
+const Navbar = ({loggedIn , setLoggedIn, setAnswers, setUser}) => {
   const navigate = useNavigate();
 
   const logOut = () => {
-    setLoggedIn(false);
     localStorage.clear();
+    setUser("")
+    setLoggedIn(false);
+    setAnswers("")
     navigate("/")
   };
   return (

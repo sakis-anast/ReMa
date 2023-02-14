@@ -68,9 +68,9 @@ function Login({setLoggedIn }) {
             />
            
             <button >Login</button>
-            <span>
-              don't have an account ?<Link to="/signup"> Signup</Link>
-            </span>
+            {/* <span>
+             I don't have an account ?<Link to="/signup"> Signup</Link>
+            </span> */}
           </div>
         </form>
       </div>

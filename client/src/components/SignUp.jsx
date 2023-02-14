@@ -87,9 +87,9 @@ function onChange(value) {
           onChange={onChange}
         />
             <button disabled={!verify}>Create User</button>
-            <span>
+            {/* <span>
               I already have an account? <Link to="/login"> Login</Link>
-            </span>
+            </span> */}
           </div>
         </form>
       </div>
