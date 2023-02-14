@@ -80,7 +80,7 @@
         }
       }
   
-      .signup-inputs-container {
+      .signup-inputs-container , .eye {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -125,3 +125,15 @@
   input::placeholder {
     color: blue;
   }
+.eye {
+    position: relative;
+  
+  
+ 
+  
+  span {
+    cursor: pointer;
+    position: absolute;
+    right: 8px;
+  }
+}

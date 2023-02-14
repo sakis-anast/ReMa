@@ -1,9 +1,24 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Icon } from 'react-icons-kit'
+import {eye} from 'react-icons-kit/feather/eye'
+import {eyeOff} from 'react-icons-kit/feather/eyeOff'
 function Login({setLoggedIn }) {
   const navigate = useNavigate();
+  const [type, setType]=useState('password');
+  const [icon, setIcon]=useState(eyeOff);
 
+  const handleToggle=()=>{    
+    if(type==='password'){
+      setIcon(eye);      
+      setType('text');
+    }
+    else{
+      setIcon(eyeOff);     
+      setType('password');
+    }
+  }
   //user input values
   let [values, setValues] = useState({
     username: "",
@@ -59,13 +74,18 @@ function Login({setLoggedIn }) {
               onChange={(e) => changeHandler(e)}
               required
             />
+           
+            <div className="eye">
             <input
-              type="password"
-              placeholder="password"
+          type={type}
+          placeholder="password"
               name="password"
               onChange={(e) => changeHandler(e)}
               required
             />
+           
+        <span onClick={handleToggle}><Icon icon={icon} size={25}/></span>
+            </div>
            
             <button >Login</button>
             {/* <span>
