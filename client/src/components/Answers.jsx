@@ -8,15 +8,28 @@ import {RemoteAllowed} from "./RemoteAllowed";
 import {Hybrid} from "./Hybrid";
 import {Physical} from "./Physical";
 
-function Answers({loggedIn , answers}) {
+function Answers({loggedIn , answers,user , setAnswers }) {
   const navigate = useNavigate();
   useEffect(() => {
     if(!loggedIn){
       navigate("/");
+    }else{
+      getAnswers() 
     }
   },[]);
+
+  async function getAnswers() {
+    await axios
+    .post("http://localhost:3636/survey/get", { owner: user._id })
+    .then(({ data }) => {
+      setAnswers(data);
+      console.log(data)
+
+      });
+  }
   async function  remove(id){
 await axios.delete("http://localhost:3636/survey/"+id)
+getAnswers()
 }
 
 const componentRef = useRef();

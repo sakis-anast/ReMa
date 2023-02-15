@@ -19,6 +19,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState("");
   const [answers, setAnswers] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if(localStorage.getItem("token")){
@@ -30,25 +31,16 @@ function App() {
           .then(({ data }) => {
             setUser(data);
             setLoggedIn(true)
+           
           })
           .catch((err) => console.error("Error:", err));
       }
     }
-    console.log(user)
   },[loggedIn]);
 
-  console.log(answers)
-  useEffect(() => {
-    if(loggedIn){
-    axios
-      .post("http://localhost:3636/survey/get", { owner: user._id })
-      .then(({ data }) => {
-        if (data.message !== "no survey"){
-        setAnswers(data);}
-      });
-      }console.log(answers);
-  }
-  ,[loggedIn]);
+  // console.log(answers)
+
+ 
   return (
     <BrowserRouter>
       <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} setAnswers={setAnswers} setUser={setUser} />
@@ -58,14 +50,14 @@ function App() {
         <Route path="/survey" element={<Survey  loggedIn={loggedIn} user ={user} setLoggedIn={setLoggedIn}/>}></Route>
         <Route
           path="/login"
-          element={<Login setLoggedIn={setLoggedIn}/>}
+          element={<Login setLoggedIn={setLoggedIn} setLoading={setLoading}/>}
         ></Route>
         <Route path="/ecte" element={<Ecte />}></Route>
         <Route path="/ldi" element={<Ldi />}></Route>
         <Route path="/Metalaxis" element={<Metalaxis />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/profile" element={<Profile  loggedIn={loggedIn}  user ={user}/>}></Route>
-        <Route path="/answers" element={<Answers  loggedIn={loggedIn}  user ={user} answers={answers}/>}></Route>
+        <Route path="/answers" element={<Answers  loggedIn={loggedIn}  user ={user} answers={answers} setAnswers={setAnswers} />}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -20,7 +20,6 @@ export default function App({loggedIn , user , setLoggedIn}) {
     }
   },[]);
   const onSubmit = async(data) => {
-    console.log(data);
     let res = 0
     for(let key in data){
       if(data[key] === "Yes" || data[key] === "Strong" ){
@@ -70,8 +69,7 @@ export default function App({loggedIn , user , setLoggedIn}) {
      
     });
     alert("your answers have been saved")
-    navigate("/")
-    setLoggedIn(true)
+    navigate("/answers")
   };
 
   return (
