@@ -28,21 +28,7 @@ export default function App({loggedIn , user , setLoggedIn}) {
         res++
       }
     }
-    // if (res <=4){
-    //   setResult("Physical / No remote")
-    // }else if (res<=8){
-    //   setResult("Hybrid")
 
-    // }else if (res<=12){
-    //   setResult("Remote allowed")
-
-    // }else if (res<=16){
-    //   setResult("Remote first")
-
-    // }else {
-    //   setResult("Remote only")
-
-    // }console.log(result)
     await axios
     .post("http://localhost:3636/survey", {
       industry : data.industry,
@@ -68,12 +54,16 @@ export default function App({loggedIn , user , setLoggedIn}) {
       console.log(data);
      
     });
+    axios.post('https://sheet.best/api/sheets/01dec213-03a8-4b4d-8168-bec3ad1ba7a3', data)
+    .then(response => {
+      console.log(response);
+    })
     alert("your answers have been saved")
     navigate("/answers")
   };
 
   return (
-    <div className="container">
+    <div className="answers-container">
       <h2>Remote Management for SMEs (ReMa)</h2>
       <p>
         This questionnaire survey serves the purpose of measuring the SME's

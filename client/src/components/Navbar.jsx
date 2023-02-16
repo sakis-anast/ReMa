@@ -45,9 +45,9 @@ const Navbar = ({loggedIn , setLoggedIn, setAnswers, setUser}) => {
 <div className="dropdown-content">
 <Link to="/profile"> Profile</Link>
 <Link to="/answers"> Your Answers</Link>
-  <button onClick={() => {
-                logOut();
-              }}>Logout</button>
+ 
+              <Link href="#" onClick={() => {
+                logOut();}}>Logout</Link>
 </div>
 </div>
 <Link to="/survey"> Survey</Link>

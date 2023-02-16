@@ -7,7 +7,7 @@ import {RemoteFirst} from "./RemoteFirst";
 import {RemoteAllowed} from "./RemoteAllowed";
 import {Hybrid} from "./Hybrid";
 import {Physical} from "./Physical";
-
+import "../style/Style.scss"
 function Answers({loggedIn , answers,user , setAnswers }) {
   const navigate = useNavigate();
   useEffect(() => {
@@ -95,23 +95,26 @@ const componentRef = useRef();
        <div>
        How would you equip and educate your team members?: {answers.comments}
        </div>
-       <div>
-         result : {answers.result}
-       </div>
+      
        <div>
         
        
       <button onClick={handlePrint}>Action Plan</button>
       {answers.result > 16 &&
-      < RemoteOnly ref={componentRef} />}
+      < RemoteOnly  ref={componentRef} />
+      }
       {answers.result > 12 && answers.result <=16 &&
-      < RemoteFirst ref={componentRef} />}
+     < RemoteFirst ref={componentRef} />
+      }
       {answers.result >8 && answers.result <=12 &&
-      < RemoteAllowed ref={componentRef} />}
+      < RemoteAllowed ref={componentRef} />
+      }
       {answers.result > 4 && answers.result <=8 &&
-      < Hybrid ref={componentRef} />}
+< Hybrid ref={componentRef} />      
+      }
        {answers.result <= 4 &&
-      < Physical ref={componentRef} />}
+      < Physical ref={componentRef} />
+      }
        </div>
        <button onClick={() => {
                           remove(answers._id);
