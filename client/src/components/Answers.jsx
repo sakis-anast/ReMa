@@ -1,5 +1,5 @@
 import {  useNavigate } from "react-router-dom";
-import React , {useState , useEffect , useRef} from "react";
+import React , {useState , useEffect , useRef, useCallback } from "react";
 import { useReactToPrint } from 'react-to-print';
 import axios from "axios";
 import {RemoteOnly} from "./RemoteOnly";
@@ -31,16 +31,29 @@ function Answers({loggedIn , answers,user , setAnswers }) {
 await axios.delete("http://localhost:3636/survey/"+id)
 getAnswers()
 }
+const useToggle = (initialState = false) => {
+  const [state, setState] = useState(initialState);
+  const toggle = useCallback(() => setState((state) => !state), []);
+  return [state, toggle]
+};
 
+
+const [toggle, setToggle] = useToggle();
 const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
     return (
       <>
+        <button
+onClick={setToggle}      >
+         {!toggle ? 'show answers' : 'hide'}
+      </button>   
       {answers &&
             answers.map((answers) => {
               return ( < div className="answers" key={answers._id}> 
+             
+      {toggle &&  <div>
          <div>
          Industry of the organization : {answers.industry}
        </div>
@@ -95,7 +108,9 @@ const componentRef = useRef();
        <div>
        How would you equip and educate your team members?: {answers.comments}
        </div>
-      
+
+       </div>}
+
        <div>
         
        
