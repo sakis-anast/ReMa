@@ -183,3 +183,12 @@ button {
 /* .action{
   display: none;
 } */
+
+.link-nav-small{
+  color: black;
+  text-decoration: none;
+}
+.link-nav-big{
+  color: white;
+  text-decoration: none;
+}
