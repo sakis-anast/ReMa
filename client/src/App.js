@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState , useEffect} from "react";
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Navbar from "./components/Navbar";
 //importing components
@@ -9,9 +10,9 @@ import SignUp from "./components/SignUp";
 import Survey from "./components/Survey";
 import Login from "./components/Login";
 import Home from "./components/Home";
-import Ldi from "./components/Ldi";
-import Ecte from "./components/Ecte";
-import Metalaxis from "./components/Metalaxis";
+// import Ldi from "./components/Ldi";
+// import Ecte from "./components/Ecte";
+import Partners from "./components/Partners";
 import Contact from "./components/Contact";
 import Profile from "./components/Profile";
 import Answers from "./components/Answers";
@@ -52,9 +53,9 @@ function App() {
           path="/login"
           element={<Login setLoggedIn={setLoggedIn} setLoading={setLoading}/>}
         ></Route>
-        <Route path="/ecte" element={<Ecte />}></Route>
-        <Route path="/ldi" element={<Ldi />}></Route>
-        <Route path="/Metalaxis" element={<Metalaxis />}></Route>
+        {/* <Route path="/ecte" element={<Ecte />}></Route>
+        <Route path="/ldi" element={<Ldi />}></Route> */}
+        <Route path="/partners" element={<Partners />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/profile" element={<Profile  loggedIn={loggedIn}  user ={user}/>}></Route>
         <Route path="/answers" element={<Answers  loggedIn={loggedIn}  user ={user} answers={answers} setAnswers={setAnswers} />}></Route>

@@ -192,3 +192,17 @@ button {
   color: white;
   text-decoration: none;
 }
+.logos{
+  width: 250px;
+}
+.partners{
+  text-align: center;
+  align-items: center;
+}
+.p-carousel{
+  margin-bottom: 50px;
+  width: 50%;
+  margin-left:  auto;
+  margin-right: auto;
+  text-align: center;
+}

@@ -15,8 +15,6 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
   const navigate = useNavigate();
-  const pages = ["Project", "METALAXIS", "ECTE", "LDI", "Contact Us"];
-  const settings = ["Profile", "Answers", "Logout"];
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -37,9 +35,10 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
   const logOut = () => {
     localStorage.clear();
     setUser("");
-    setLoggedIn(false);
     setAnswers("");
     navigate("/");
+    setLoggedIn(false);
+
   };
   return (
    
@@ -105,12 +104,12 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   {" "}
-                  <Link className="link-nav-small" to="/metalaxis">
-                    METALAXIS{" "}
+                  <Link className="link-nav-small" to="/partners">
+                  Partners{" "}
                   </Link>
                 </Typography>
               </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
+              {/* <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   {" "}
                   <Link className="link-nav-small" to="/ldi">
@@ -125,7 +124,7 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
                     ECTE{" "}
                   </Link>
                 </Typography>
-              </MenuItem>
+              </MenuItem> */}
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   {" "}
@@ -167,15 +166,15 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <Link className="link-nav-big" to="/metalaxis">
-                METALAXIS
+              <Link className="link-nav-big" to="/partners">
+              Partners
               </Link>
             </Button>
             <Button
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <Link className="link-nav-big" to="/ldi">
+              {/* <Link className="link-nav-big" to="/ldi">
                 LDI{" "}
               </Link>
             </Button>
@@ -190,7 +189,7 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
             <Button
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
-            >
+            > */}
               <Link className="link-nav-big" to="/contact">
                 CONTACT US{" "}
               </Link>
@@ -247,8 +246,8 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center"><Link className="link-nav-small" href="#" onClick={() => {
-                    logOut();}}>Logout</Link></Typography>
+                <Typography textAlign="center"><button className="link-nav-small"  onClick={() => {
+                    logOut();}}>Logout</button></Typography>
               </MenuItem>
             </Menu>
           </Box>
@@ -314,12 +313,12 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
             <MenuItem onClick={handleCloseNavMenu}>
               <Typography textAlign="center">
                 {" "}
-                <Link className="link-nav-small" to="/metalaxis">
-                  METALAXIS{" "}
+                <Link className="link-nav-small" to="/partners">
+                Partners{" "}
                 </Link>
               </Typography>
             </MenuItem>
-            <MenuItem onClick={handleCloseNavMenu}>
+            {/* <MenuItem onClick={handleCloseNavMenu}>
               <Typography textAlign="center">
                 {" "}
                 <Link className="link-nav-small" to="/ldi">
@@ -334,7 +333,7 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
                   ECTE{" "}
                 </Link>
               </Typography>
-            </MenuItem>
+            </MenuItem> */}
             <MenuItem onClick={handleCloseNavMenu}>
               <Typography textAlign="center">
                 {" "}
@@ -376,11 +375,11 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
             onClick={handleCloseNavMenu}
             sx={{ my: 2, color: "white", display: "block" }}
           >
-            <Link className="link-nav-big" to="/metalaxis">
-              METALAXIS
+            <Link className="link-nav-big" to="/partners">
+            Partners
             </Link>
           </Button>
-          <Button
+          {/* <Button
             onClick={handleCloseNavMenu}
             sx={{ my: 2, color: "white", display: "block" }}
           >
@@ -395,7 +394,7 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
             <Link className="link-nav-big" to="/ecte">
               ECTE{" "}
             </Link>
-          </Button>
+          </Button> */}
           <Button
             onClick={handleCloseNavMenu}
             sx={{ my: 2, color: "white", display: "block" }}
