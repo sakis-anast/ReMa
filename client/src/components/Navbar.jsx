@@ -13,6 +13,12 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faArrowRightFromBracket,
+
+} from "@fortawesome/free-solid-svg-icons";
+
 const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -246,8 +252,8 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center"><button className="link-nav-small"  onClick={() => {
-                    logOut();}}>Logout</button></Typography>
+                <Typography textAlign="center"><a className="link-nav-small"  onClick={() => {
+                    logOut();}}><FontAwesomeIcon icon={  faArrowRightFromBracket} /></a></Typography>
               </MenuItem>
             </Menu>
           </Box>

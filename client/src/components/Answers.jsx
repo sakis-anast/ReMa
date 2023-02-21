@@ -7,7 +7,10 @@ import {RemoteFirst} from "./RemoteFirst";
 import {RemoteAllowed} from "./RemoteAllowed";
 import {Hybrid} from "./Hybrid";
 import {Physical} from "./Physical";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash , faDownload  } from "@fortawesome/free-solid-svg-icons";
 import "../style/Style.scss"
+
 function Answers({loggedIn , answers,user , setAnswers }) {
   const navigate = useNavigate();
   useEffect(() => {
@@ -45,14 +48,22 @@ const componentRef = useRef();
   });
     return (
       <>
-        <button
+      <div className="dis-ans">
+        <button 
 onClick={setToggle}      >
-         {!toggle ? 'show answers' : 'hide'}
-      </button>   
+     {!toggle ? 'Show answers' : 'Hide answers'}
+   </button>   
+   </div>
+   <div className="grid-answers">
+      
+     
       {answers &&
             answers.map((answers) => {
               return ( < div className="answers" key={answers._id}> 
-             
+              <h5>
+        Created At: {answers.createdAt}
+
+       </h5>
       {toggle &&  <div>
          <div>
          Industry of the organization : {answers.industry}
@@ -111,10 +122,13 @@ onClick={setToggle}      >
 
        </div>}
 
+      
+
        <div>
         
-       
-      <button onClick={handlePrint}>Action Plan</button>
+       Action Plan <a onClick={handlePrint}>   <FontAwesomeIcon className="download" icon={faDownload} /></a>
+ 
+      <div className="hid">
       {answers.result > 16 &&
       < RemoteOnly  ref={componentRef} />
       }
@@ -130,12 +144,14 @@ onClick={setToggle}      >
        {answers.result <= 4 &&
       < Physical ref={componentRef} />
       }
+      </div>
        </div>
-       <button onClick={() => {
+       <a onClick={() => {
                           remove(answers._id);
-                        }}> delete survey</button>
+                        }}>  <FontAwesomeIcon className="trash" icon={faTrash} /></a>
        </ div> );
             })}
+            </div>
       </>
     );
   }

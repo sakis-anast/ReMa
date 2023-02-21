@@ -134,7 +134,8 @@ function onChange(value) {
           sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
           onChange={onChange}
         />
-            <button disabled={!verify}>Create User</button>
+        
+            <button disabled={!verify} className="conf">Create User</button>
             {/* <span>
               I already have an account? <Link to="/login"> Login</Link>
             </span> */}

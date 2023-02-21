@@ -87,7 +87,7 @@ function Login({setLoggedIn, setLoading }) {
         <span onClick={handleToggle}><Icon icon={icon} size={25}/></span>
             </div>
            
-            <button >Login</button>
+            <button className="conf">Login</button>
             {/* <span>
              I don't have an account ?<Link to="/signup"> Signup</Link>
             </span> */}
