@@ -1,8 +1,183 @@
-
+import "../style/Home.scss"
+import Contact from "./Contact"
+import Partners from "./Partners"
+import Footer from "./Footer"
 function Home() {
   const logo = require("../logos/rema_logo_2.jpg");
   return (
     <>
+    <main>
+
+      <section  id="project" className="section-hero">
+        <div className="hero-container">
+
+          <div className="hero-content">
+            <h1 className="hero-title">
+            Remote Management for SMEs
+            </h1>
+<p class="hero-text">
+  We created a KA210-VET Erasmus+ project for
+Small-scale partnerships in the field of vocational
+
+education and training            </p>
+          </div>
+          <div className="ream-logo">
+<img src={logo} alt="Rema Logo" />
+</div>
+        </div>
+
+      </section>
+      <section className="partners" id="partners">
+      <Partners/>
+    </section>
+      <section id="mission" className="mission">
+        <h2>Our Mission</h2>
+        <div className="mission-container">
+          <div>
+            <p> Project Objectives</p>
+          <ul>
+            <li>
+            A systematic review of the practices on remote management tools and strategies
+            </li>
+            <li>
+            MOOC (Massive Online and Open Course) on remote management
+            </li>
+          </ul>
+          </div>
+          <div>
+          <p>Expected Outcomes</p>
+
+          <ul>
+            <li>
+            Review of the practices on remote management tools and strategies
+
+            </li>
+            <li>
+            Reporting on remote management readiness of SME's 
+            </li>
+            <li>
+            List of skills needed list for SMEs managers
+            </li>
+            <li>
+            Curriculum development
+            </li>
+            <li>
+            MOOC for upskilling SMEs managers 
+            </li>
+          </ul>
+          </div>
+
+        </div>
+      </section>
+      <section class="section service" aria-labelledby="service-label">
+        <div class="container">
+
+          <p class="section-subtitle" id="service-label">The objective of the project “Remote Management”, is to promote the acquisition of competences of SMEs managers, in
+the adoption of remote management strategies and the use of related tools.</p>
+
+          <h2 class="h2 section-title">
+          Our Mission
+          </h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <h3 class="h4 card-title">24/7 Support</h3>
+
+                <p class="card-text">
+                A systematic review of the practices on remote management tools and strategies
+                </p>
+
+                <a href="#" class="btn-text">
+                  <span class="span">Learn More</span>
+
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="shield-checkmark-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <h3 class="h4 card-title">Secure Payments</h3>
+
+                <p class="card-text">
+                  Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras
+                  justo.
+                </p>
+
+                <a href="#" class="btn-text">
+                  <span class="span">Learn More</span>
+
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="cloud-download-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <h3 class="h4 card-title">Daily Updates</h3>
+
+                <p class="card-text">
+                  Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras
+                  justo.
+                </p>
+
+                <a href="#" class="btn-text">
+                  <span class="span">Learn More</span>
+
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon">
+                  <ion-icon name="pie-chart-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <h3 class="h4 card-title">Market Research</h3>
+
+                <p class="card-text">
+                  Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras
+                  justo.
+                </p>
+
+                <a href="#" class="btn-text">
+                  <span class="span">Learn More</span>
+
+                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+    </main>
+    
     <header>
       <img src={logo} alt="" />
     </header>
@@ -50,9 +225,9 @@ how to use the app
 
 eu
       </div>
-      <footer>
-        Eu
-      </footer>
+      <Contact/>
+      <Footer>
+      </Footer>
     </>
   );
 }

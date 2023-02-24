@@ -1,0 +1,49 @@
+.hero-container{
+display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+    gap: 70px;
+
+}
+.hero-text {
+     
+    margin-block: 24px 36px;
+  }
+  .hero-content{
+
+  }
+.section-hero{
+    background-image: url("../logos/1976d2.png");
+    text-align: center;
+color: white;
+padding-block-start:   70px ;
+gap: 70px;
+padding-bottom: 80px;
+
+}
+.mission{
+  background-image: url("../logos/1976d2.png");
+  text-align: center;
+color: white;
+padding-top: 35px;
+    padding-bottom: 35px;
+.mission-container{
+  display: grid;
+  grid-template-columns: 0.8fr 0.8fr;
+    align-items: center;
+    padding-left: 30px;
+
+    div{
+      border: 2px solid white;
+      border-radius: 5%;
+      height: 250px;
+      width: 90%;
+
+    }
+    ul{
+      list-style-type: none;
+    }
+
+}
+}

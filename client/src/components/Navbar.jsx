@@ -14,10 +14,13 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../style/Navbar.scss"
+
 import {
     faArrowRightFromBracket,
 
 } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
   const navigate = useNavigate();
@@ -46,9 +49,19 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
     setLoggedIn(false);
 
   };
+  const [colorChange, setColorchange] = useState(false);
+  const changeNavbarColor = () =>{
+     if(window.scrollY >= 80){
+       setColorchange(true);
+     }
+     else{
+       setColorchange(false);
+     }
+  };
+  window.addEventListener('scroll', changeNavbarColor);
   return (
    
-    <AppBar position="static">
+    <AppBar  elevation={1} position="static" >
        {loggedIn ?(
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -115,22 +128,7 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
                   </Link>
                 </Typography>
               </MenuItem>
-              {/* <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">
-                  {" "}
-                  <Link className="link-nav-small" to="/ldi">
-                    LDI{" "}
-                  </Link>
-                </Typography>
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">
-                  {" "}
-                  <Link className="link-nav-small" to="/ecte">
-                    ECTE{" "}
-                  </Link>
-                </Typography>
-              </MenuItem> */}
+              
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   {" "}
@@ -164,41 +162,26 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <Link className="link-nav-big" to="/">
-                PROJECT{" "}
-              </Link>
+              <a className="link-nav-big" href="/#project">
+                PROJECT
+              </a>
             </Button>
             <Button
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <Link className="link-nav-big" to="/partners">
+              <a className="link-nav-big" href="/#mission">
               Partners
-              </Link>
+              </a>
             </Button>
             <Button
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              {/* <Link className="link-nav-big" to="/ldi">
-                LDI{" "}
-              </Link>
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              <Link className="link-nav-big" to="/ecte">
-                ECTE{" "}
-              </Link>
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            > */}
-              <Link className="link-nav-big" to="/contact">
+             
+              <a className="link-nav-big" href="/#contact">
                 CONTACT US{" "}
-              </Link>
+              </a>
             </Button>
           </Box>
           
@@ -324,22 +307,6 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
                 </Link>
               </Typography>
             </MenuItem>
-            {/* <MenuItem onClick={handleCloseNavMenu}>
-              <Typography textAlign="center">
-                {" "}
-                <Link className="link-nav-small" to="/ldi">
-                  LDI{" "}
-                </Link>
-              </Typography>
-            </MenuItem>
-            <MenuItem onClick={handleCloseNavMenu}>
-              <Typography textAlign="center">
-                {" "}
-                <Link className="link-nav-small" to="/ecte">
-                  ECTE{" "}
-                </Link>
-              </Typography>
-            </MenuItem> */}
             <MenuItem onClick={handleCloseNavMenu}>
               <Typography textAlign="center">
                 {" "}

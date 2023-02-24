@@ -30,7 +30,7 @@ function Contact() {
   };
 
   return (
-    <StyledContactForm>
+    <StyledContactForm id="contact">
       <form ref={form} onSubmit={sendEmail}>
         <label>Name</label>
         <input type="text" name="name" />

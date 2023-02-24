@@ -58,66 +58,66 @@ onClick={setToggle}      >
       
      
       {answers &&
-            answers.map((answers) => {
-              return ( < div className="answers" key={answers._id}> 
+            answers.map((answer) => {
+              return ( < div className="answers" key={answer._id}> 
               <h5>
-        Created At: {answers.createdAt}
+        Created At: {answer.createdAt}
 
        </h5>
       {toggle &&  <div>
          <div>
-         Industry of the organization : {answers.industry}
+         Industry of the organization : {answer.industry}
        </div>
        <div>
-       Location of the organization : {answers.location}
+       Location of the organization : {answer.location}
        </div>
        <div>
-       Staff number of the organization : {answers.size}
+       Staff number of the organization : {answer.size}
        </div>
        <div>
-         Current structure: {answers.currentStructure}
+         Current structure: {answer.currentStructure}
        </div>
        <div>
-         Optimal structure : {answers.bestStructure}
+         Optimal structure : {answer.bestStructure}
        </div>
        <h3>
        How would you characterize your organization in terms of its Cultural Readiness for Remote Work?
        </h3>
        <div>
-       Transparency of management/ownership with their team: {answers.q1}
+       Transparency of management/ownership with their team: {answer.q1}
        </div>
        <div>
-       Environment of Trust: {answers.q2}
+       Environment of Trust: {answer.q2}
        </div>
        <div>
-       Transparency in communication and documentation: {answers.q3}
+       Transparency in communication and documentation: {answer.q3}
        </div>
        <div>
-       Willingness of Management/ownership to gather feedback from the remote workers regarding their needs : {answers.q4}
+       Willingness of Management/ownership to gather feedback from the remote workers regarding their needs : {answer.q4}
        </div>
        <div>
-       Documentation of company processes: {answers.q5}
+       Documentation of company processes: {answer.q5}
        </div>
        <h3>
        How would you characterize your organization in terms of its Technical Readiness for Remote Work?
        </h3>
        <div>
-       Digital communication tools : {answers.q6}
+       Digital communication tools : {answer.q6}
        </div>
        <div>
-       Secure access of sensitive information (e.g. VPN) : {answers.q7}
+       Secure access of sensitive information (e.g. VPN) : {answer.q7}
        </div>
        <div>
-       Remote IT infrastructure to enable remote work (IT protocols/tools/laptops) : {answers.q8}
+       Remote IT infrastructure to enable remote work (IT protocols/tools/laptops) : {answer.q8}
        </div>
        <h4>
-       Have you created documented procedures about remote working in your company? : {answers.q9}
+       Have you created documented procedures about remote working in your company? : {answer.q9}
        </h4>
        <h4>
-       Do you use any project management platforms for remote working in your company? : {answers.q10}
+       Do you use any project management platforms for remote working in your company? : {answer.q10}
        </h4>
        <div>
-       How would you equip and educate your team members?: {answers.comments}
+       How would you equip and educate your team members?: {answer.comments}
        </div>
 
        </div>}
@@ -129,25 +129,25 @@ onClick={setToggle}      >
        Action Plan <a onClick={handlePrint}>   <FontAwesomeIcon className="download" icon={faDownload} /></a>
  
       <div className="hid">
-      {answers.result > 16 &&
+      {answer.result > 16 &&
       < RemoteOnly  ref={componentRef} />
       }
-      {answers.result > 12 && answers.result <=16 &&
+      {answer.result > 12 && answer.result <=16 &&
      < RemoteFirst ref={componentRef} />
       }
-      {answers.result >8 && answers.result <=12 &&
+      {answer.result >8 && answer.result <=12 &&
       < RemoteAllowed ref={componentRef} />
       }
-      {answers.result > 4 && answers.result <=8 &&
+      {answer.result > 4 && answer.result <=8 &&
 < Hybrid ref={componentRef} />      
       }
-       {answers.result <= 4 &&
+       {answer.result <= 4 &&
       < Physical ref={componentRef} />
       }
       </div>
        </div>
        <a onClick={() => {
-                          remove(answers._id);
+                          remove(answer._id);
                         }}>  <FontAwesomeIcon className="trash" icon={faTrash} /></a>
        </ div> );
             })}
