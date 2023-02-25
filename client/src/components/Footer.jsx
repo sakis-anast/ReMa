@@ -6,7 +6,7 @@ return (
         <div className="sb_footer section_padding">
             <div className="sb_footer_links">
                 <div className="sb_footer_links_div">
-                    <h4>About us</h4>
+                    <h4>About the Project</h4>
                     <a href="#">
                         <p>ok</p>
                     </a>
@@ -21,7 +21,22 @@ return (
                     </a>
                 </div>
                 <div className="sb_footer_links_div">
-                    <h4>Project</h4>
+                    <h4>Team</h4>
+                    <a href="#partners">
+                        <p>Partbers</p>
+                    </a>
+                    <a href="#">
+                        <p>ECTE website</p>
+                    </a>
+                    <a href="#">
+                        <p>LDI website</p>
+                    </a>
+                    <a href="#">
+                        <p>Metalaxis website</p>
+                    </a>
+                </div>
+                <div className="sb_footer_links_div">
+                    <h4>EU</h4>
                     <a href="#">
                         <p>ok</p>
                     </a>
@@ -35,22 +50,7 @@ return (
                         <p>ok</p>
                     </a>
                 </div>
-                <div className="sb_footer_links_div">
-                    <h4>Contact</h4>
-                    <a href="#">
-                        <p>ok</p>
-                    </a>
-                    <a href="#">
-                        <p>ok</p>
-                    </a>
-                    <a href="#">
-                        <p>ok</p>
-                    </a>
-                    <a href="#">
-                        <p>ok</p>
-                    </a>
-                </div>
-                <div className="sb_footer_links_div">
+                {/* <div className="sb_footer_links_div">
                     <h4>Social</h4>
                     <a href="#">
                         <p>ok</p>
@@ -64,21 +64,26 @@ return (
                     <a href="#">
                         <p>ok</p>
                     </a>
-                </div>
+                </div> */}
                 <div className="sb_footer_links_div">
-                    <h4>Social media</h4>
+                    <h4>Contact</h4>
                     <div className="socialMedia">
+                    <a href="#">
+                        <p>Contact us</p>
+                    </a>
                         <p><img src="" alt="" /></p>
                         <p><img src="" alt="" /></p>
                         <p><img src="" alt="" /></p>
                         <p><img src="" alt="" /></p>
+                        </div>
 
                     </div>
                 </div>
+                <hr></hr>
                 <div className="sb_footer_below">
                     <div className="sb_footer_copyright">
                         <p>
-                            @{new Date().getFullYear} Rema all rights reserved
+                            @{new Date().getFullYear()} Rema. All rights reserved
                         </p>
                     </div>
                     <div className="sb_footer_below_links">
@@ -90,7 +95,6 @@ return (
                     </div>
                 </div>
             </div>
-        </div>
     </div>
     </>
 )
