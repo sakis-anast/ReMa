@@ -10,8 +10,8 @@ import SignUp from "./components/SignUp";
 import Survey from "./components/Survey";
 import Login from "./components/Login";
 import Home from "./components/Home";
-// import Ldi from "./components/Ldi";
-// import Ecte from "./components/Ecte";
+import Footer from "./components/Footer";
+import ScrollTop from "./components/ScrollTop";
 import Partners from "./components/Partners";
 import Contact from "./components/Contact";
 import Profile from "./components/Profile";
@@ -45,6 +45,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} setAnswers={setAnswers} setUser={setUser} />
+      <ScrollTop/>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/signup" element={<SignUp/>}></Route>
@@ -60,6 +61,7 @@ function App() {
         <Route path="/profile" element={<Profile  loggedIn={loggedIn}  user ={user}/>}></Route>
         <Route path="/answers" element={<Answers  loggedIn={loggedIn}  user ={user} answers={answers} setAnswers={setAnswers} />}></Route>
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }

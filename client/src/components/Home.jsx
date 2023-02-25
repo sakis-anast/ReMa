@@ -2,10 +2,12 @@ import "../style/Home.scss"
 import Contact from "./Contact"
 import Partners from "./Partners"
 import Footer from "./Footer"
+import ScrollTop from "./ScrollTop"
 function Home() {
   const logo = require("../logos/rema_logo_2.jpg");
   return (
     <>
+    {/* <ScrollTop/> */}
     <main>
 
       <section  id="project" className="section-hero">
@@ -226,8 +228,8 @@ how to use the app
 eu
       </div>
       <Contact/>
-      <Footer>
-      </Footer>
+      {/* <Footer>
+      </Footer> */}
     </>
   );
 }
