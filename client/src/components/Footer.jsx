@@ -1,15 +1,17 @@
 import "../style/Footer.scss"
 function Footer(){
+    const eu = require("../logos/eu.png");
+
 return (
     <>
+    <div className="eu">
+    <img src={eu} alt="EU funded Logo"  />
+    </div>
     <div className="footer">
         <div className="sb_footer section_padding">
             <div className="sb_footer_links">
                 <div className="sb_footer_links_div">
                     <h4>About the Project</h4>
-                    <a href="#">
-                        <p>ok</p>
-                    </a>
                     <a href="#">
                         <p>ok</p>
                     </a>
@@ -31,9 +33,6 @@ return (
                     <a href="#">
                         <p>LDI website</p>
                     </a>
-                    <a href="#">
-                        <p>Metalaxis website</p>
-                    </a>
                 </div>
                 <div className="sb_footer_links_div">
                     <h4>EU</h4>
@@ -43,38 +42,16 @@ return (
                     <a href="#">
                         <p>ok</p>
                     </a>
-                    <a href="#">
-                        <p>ok</p>
-                    </a>
-                    <a href="#">
-                        <p>ok</p>
-                    </a>
+                  
                 </div>
-                {/* <div className="sb_footer_links_div">
-                    <h4>Social</h4>
-                    <a href="#">
-                        <p>ok</p>
-                    </a>
-                    <a href="#">
-                        <p>ok</p>
-                    </a>
-                    <a href="#">
-                        <p>ok</p>
-                    </a>
-                    <a href="#">
-                        <p>ok</p>
-                    </a>
-                </div> */}
                 <div className="sb_footer_links_div">
                     <h4>Contact</h4>
                     <div className="socialMedia">
-                    <a href="#">
+                    <a href="/contact">
                         <p>Contact us</p>
                     </a>
-                        <p><img src="" alt="" /></p>
-                        <p><img src="" alt="" /></p>
-                        <p><img src="" alt="" /></p>
-                        <p><img src="" alt="" /></p>
+                        <p><img src="" alt="" />Linkdin</p>
+  
                         </div>
 
                     </div>
@@ -90,7 +67,6 @@ return (
                         <a href="#" ><div><p>Terms & Conditions</p></div></a>
                         <a href="#" ><div><p>Privacy</p></div></a>
                         <a href="#" ><div><p>Security</p></div></a>
-                        <a href="#" ><div><p>Cookies</p></div></a>
 
                     </div>
                 </div>

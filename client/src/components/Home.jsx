@@ -29,155 +29,38 @@ education and training            </p>
         </div>
 
       </section>
-      <section className="partners" id="partners">
-      <Partners/>
-    </section>
+   
       <section id="mission" className="mission">
         <h2>Our Mission</h2>
-        <div className="mission-container">
-          <div>
-            <p> Project Objectives</p>
-          <ul>
-            <li>
+          <div className="objectives">
+            <div className="outcomes">
+          <h4>Project Objectives</h4>
+
+            <p>
             A systematic review of the practices on remote management tools and strategies
-            </li>
-            <li>
+            </p>
+            <p>
             MOOC (Massive Online and Open Course) on remote management
-            </li>
-          </ul>
-          </div>
-          <div>
-          <p>Expected Outcomes</p>
-
-          <ul>
-            <li>
-            Review of the practices on remote management tools and strategies
-
-            </li>
-            <li>
-            Reporting on remote management readiness of SME's 
-            </li>
-            <li>
-            List of skills needed list for SMEs managers
-            </li>
-            <li>
-            Curriculum development
-            </li>
-            <li>
-            MOOC for upskilling SMEs managers 
-            </li>
-          </ul>
-          </div>
+            </p>
+            </div>
+          <div className="outcomes">
+            <h4>Expected Outcomes</h4>
+  <p>            Review of the practices on remote management tools and strategies
+</p>
+<p>            Reporting on remote management readiness of SME's 
+</p>
+<p>List of skills needed list for SMEs managers</p>
+<p>            Curriculum development
+</p>
+<p> MOOC for upskilling SMEs managers </p>
+  
+          
 
         </div>
-      </section>
-      <section class="section service" aria-labelledby="service-label">
-        <div class="container">
-
-          <p class="section-subtitle" id="service-label">The objective of the project “Remote Management”, is to promote the acquisition of competences of SMEs managers, in
-the adoption of remote management strategies and the use of related tools.</p>
-
-          <h2 class="h2 section-title">
-          Our Mission
-          </h2>
-
-          <ul class="grid-list">
-
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
-                </div>
-
-                <h3 class="h4 card-title">24/7 Support</h3>
-
-                <p class="card-text">
-                A systematic review of the practices on remote management tools and strategies
-                </p>
-
-                <a href="#" class="btn-text">
-                  <span class="span">Learn More</span>
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <ion-icon name="shield-checkmark-outline" aria-hidden="true"></ion-icon>
-                </div>
-
-                <h3 class="h4 card-title">Secure Payments</h3>
-
-                <p class="card-text">
-                  Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras
-                  justo.
-                </p>
-
-                <a href="#" class="btn-text">
-                  <span class="span">Learn More</span>
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <ion-icon name="cloud-download-outline" aria-hidden="true"></ion-icon>
-                </div>
-
-                <h3 class="h4 card-title">Daily Updates</h3>
-
-                <p class="card-text">
-                  Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras
-                  justo.
-                </p>
-
-                <a href="#" class="btn-text">
-                  <span class="span">Learn More</span>
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card">
-
-                <div class="card-icon">
-                  <ion-icon name="pie-chart-outline" aria-hidden="true"></ion-icon>
-                </div>
-
-                <h3 class="h4 card-title">Market Research</h3>
-
-                <p class="card-text">
-                  Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras
-                  justo.
-                </p>
-
-                <a href="#" class="btn-text">
-                  <span class="span">Learn More</span>
-
-                  <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                </a>
-
-              </div>
-            </li>
-
-          </ul>
-
         </div>
+
       </section>
+     
     </main>
     
     <header>
@@ -197,36 +80,14 @@ team across multiple office locations and managing full-time remote workers. How
 prepared for the challenges and considerations of managing remote teams. The training market, however, has not yet
 caught up with these challenges as only 15% of remote employee managers have received specialized training (the
 “2020 State of Remote Work Report”.)
-The objective of the project “Remote Management”, is to promote the acquisition of competences of SMEs managers, in
-the adoption of remote management strategies and the use of related tools. For addressing this objective, the following
-specific objectives (aims) have been set:
-SO1. A systematic review of the practices on remote management tools and strategies
-SO2. MOOC (Massive Online and Open Course) on remote management
 
-
-The expected outcomes (R) include:
-R1- Review of the practices on remote management tools and strategies
-R2- Reporting on remote management readiness of SME's in partners' regions,
-R3 -Skills needed list for SMEs managers, to adopt an effective remote management strategy,
-R4- Curriculum development in line with ECVET procedures
-R5- MOOC (Massive Online and Open Course) in line with EQAVET, for upskilling SMEs managers in remote
-management adoption.
-LINKS WITH SELECTED PRIORITIES
--ADAPTING VOCATIONAL EDUCATION AND TRAINING TO LABOR NEEDS. The ReMa project Objective is to adapt
-existing training for ensuring that managers in SMEs can effectively adopt remote management strategies and tools.
--CREATING NEW, INNOVATIVE CURRICULA and COURSES. A new curriculum and respective online course, will be
-developed for
-- OVERCOMING SKILLS MISMATCH AND ADDRESSING THE NEEDS OF THE LABOUR MARKET and addressing
-the skills needed in the field of remote management.
-- Acquisition of new DIGITAL SKILLS AND COMPETENCES is the of skills needed list (A1.3), resulting from reviewing
-digital readiness survey of SMEs (A1.2)
-
-how to use the app
-
-
-
-eu
       </div>
+      <section className="howitworks" id="howitworks">
+      how to use
+    </section>
+      <section className="partners" id="partners">
+      <Partners/>
+    </section>
       <Contact/>
       {/* <Footer>
       </Footer> */}

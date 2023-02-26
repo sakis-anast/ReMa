@@ -170,9 +170,9 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <a className="link-nav-big" href="/#mission">
+              <Link className="link-nav-big" href="/#mission">
               Partners
-              </a>
+              </Link>
             </Button>
             <Button
               onClick={handleCloseNavMenu}
@@ -302,7 +302,7 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
             <MenuItem onClick={handleCloseNavMenu}>
               <Typography textAlign="center">
                 {" "}
-                <Link className="link-nav-small" to="/partners">
+                <Link className="link-nav-small" to="/#partners">
                 Partners{" "}
                 </Link>
               </Typography>
@@ -348,7 +348,7 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
             onClick={handleCloseNavMenu}
             sx={{ my: 2, color: "white", display: "block" }}
           >
-            <Link className="link-nav-big" to="/partners">
+            <Link className="link-nav-big" to="#partners">
             Partners
             </Link>
           </Button>
