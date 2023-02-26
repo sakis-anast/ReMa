@@ -4,10 +4,12 @@ import axios from "axios";
 import { Icon } from 'react-icons-kit'
 import {eye} from 'react-icons-kit/feather/eye'
 import {eyeOff} from 'react-icons-kit/feather/eyeOff'
+import "../style/Log.scss"
 function Login({setLoggedIn, setLoading }) {
   const navigate = useNavigate();
   const [type, setType]=useState('password');
   const [icon, setIcon]=useState(eyeOff);
+  const login = require("../logos/login.PNG");
 
   const handleToggle=()=>{    
     if(type==='password'){
@@ -56,6 +58,10 @@ function Login({setLoggedIn, setLoading }) {
     
   return (
     <>
+    <div className="log" >
+    <div>
+      <img src={login} alt="" />
+    </div>
       <div className="login-form-container">
         <form
           action=""
@@ -93,6 +99,7 @@ function Login({setLoggedIn, setLoading }) {
             </span> */}
           </div>
         </form>
+      </div>
       </div>
     </>
   );

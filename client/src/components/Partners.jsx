@@ -16,7 +16,7 @@ function Partners() {
 
     return (
     <>
-    <h2>Our Team</h2>
+    <h2 className="underline">Our Team</h2>
      <div className="partners-container">
      <div className="partner-logo">
 <img src={metalaxis} alt="Metalxis Logo" onClick={() => {
@@ -24,7 +24,6 @@ function Partners() {
             }} />
 
 
-             
 </div>
 
 <div className="partner-logo">

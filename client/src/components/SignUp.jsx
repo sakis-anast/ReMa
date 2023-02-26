@@ -5,6 +5,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { Icon } from 'react-icons-kit'
 import {eye} from 'react-icons-kit/feather/eye'
 import {eyeOff} from 'react-icons-kit/feather/eyeOff'
+import "../style/Log.scss"
+
 function SignUp({loggedIn}) {
   const navigate = useNavigate();
   const [verify, setVerify] = useState(false);
@@ -12,6 +14,8 @@ function SignUp({loggedIn}) {
   const [icon, setIcon]=useState(eyeOff);
   const [type2, setType2]=useState('password');
   const [icon2, setIcon2]=useState(eyeOff);
+  const login = require("../logos/login.PNG");
+
   const handleToggle=()=>{    
     if(type==='password'){
       setIcon(eye);      
@@ -82,7 +86,10 @@ function onChange(value) {
 
   return (
     <>
-   
+   <div className="log" >
+    <div>
+      <img src={login} alt="" />
+    </div>
       <div className="signup-form-container">
         <form
           action=""
@@ -136,11 +143,10 @@ function onChange(value) {
         />
         
             <button disabled={!verify} className="conf">Create User</button>
-            {/* <span>
-              I already have an account? <Link to="/login"> Login</Link>
-            </span> */}
+          
           </div>
         </form>
+      </div>
       </div>
     </>
   );

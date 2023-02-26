@@ -8,11 +8,8 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../style/Navbar.scss"
 
@@ -61,7 +58,7 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
   window.addEventListener('scroll', changeNavbarColor);
   return (
    
-    <AppBar  elevation={1} position="static" >
+    <AppBar className="color" elevation={1} position="static" >
        {loggedIn ?(
       <Container maxWidth="xl">
         <Toolbar disableGutters>

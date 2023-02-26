@@ -2,11 +2,12 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import {  useNavigate } from "react-router-dom";
-
+import "../style/Contact.scss"
 
 function Contact() {
   const form = useRef();
   const navigate = useNavigate();
+  const question = require("../logos/question.PNG");
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -30,17 +31,20 @@ function Contact() {
   };
 
   return (
+    <div className="contact">
+      <div><img src={question} alt="" /></div>
     <StyledContactForm id="contact">
       <form ref={form} onSubmit={sendEmail}>
         <label>Name</label>
-        <input type="text" name="name" />
+        <input type="text" name="name" required/>
         <label>Email</label>
-        <input type="email" name="email" />
+        <input type="email" name="email" required/>
         <label>Message</label>
         <textarea name="message" />
-        <input type="submit" value="Send" />
+        <input type="submit" value="Send" required/>
       </form>
     </StyledContactForm>
+    </div>
   );
 };
 export default Contact;
@@ -86,7 +90,7 @@ const StyledContactForm = styled.div`
     input[type="submit"] {
       margin-top: 2rem;
       cursor: pointer;
-      background: rgb(249, 105, 14);
+      background: #37517e;
       color: white;
       border: none;
     }

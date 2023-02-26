@@ -11,23 +11,26 @@ display: grid;
   }
 
 .section-hero{
-    background-image: url("../logos/1976d2.png");
+    background-color: #37517e;
     text-align: center;
 color: white;
 padding-block-start:   70px ;
 gap: 70px;
-padding-bottom: 80px;
+// padding-bottom: 80px;
+
+}
+section{
+  padding-bottom: 150px;
 
 }
 .mission{
   text-align: center;
   padding-top: 35px;
-  padding-bottom: 35px;
+  color: #37517e;
 .objectives{
   display: grid;
   grid-template-columns: 1fr 1fr;
     padding-left: 30px;
-
   
 
 }
@@ -41,7 +44,7 @@ padding-bottom: 80px;
 
 p {
   border-top: 2px dashed;
-  border-color: blue !important;
+  border-color: #37517e !important;
   margin:0; padding: 30px;
   counter-increment: section;
   position: relative;
@@ -57,7 +60,7 @@ p:nth-child(even):before {
   border-radius: 50%;
   height: 20px;
   width: 20px;
-  background-color: blue;
+  background-color: #37517e;
   text-align:center;
   color: white;
 }
@@ -70,7 +73,7 @@ p:nth-child(odd):before {
   border-radius: 50%;
   height: 20px;
   width: 20px;
-  background-color: blue;
+  background-color: #37517e;
   text-align:center;
   color: white;
 }
@@ -103,4 +106,35 @@ p:last-child {
   border-bottom-right-radius:0;
   border-bottom-left-radius:0;
 }
+}
+
+.info{
+  cursor: pointer;
+  color: white;
+  text-decoration: underline;
+}
+.howitworks{
+  h2{
+    text-align: center;
+    color:  #37517e;
+
+  }
+  .howitworks_div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+.howitworks_img{
+  text-align: center;
+  img{
+ width: 450px;}
+}
+li {
+  margin-top: 30px;
+  color:  #37517e;
+  font-weight :bold
+}
+  }
+}
+.underline{
+  text-decoration: underline;
 }

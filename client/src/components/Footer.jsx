@@ -1,4 +1,7 @@
 import "../style/Footer.scss"
+import { Link } from "react-router-dom";
+import { SocialIcon } from 'react-social-icons';
+
 function Footer(){
     const eu = require("../logos/eu.png");
 
@@ -12,45 +15,46 @@ return (
             <div className="sb_footer_links">
                 <div className="sb_footer_links_div">
                     <h4>About the Project</h4>
-                    <a href="#">
-                        <p>ok</p>
+                    <a href="/#project">
+                        <p>Project</p>
                     </a>
-                    <a href="#">
-                        <p>ok</p>
+                    <a href="/#mission">
+                        <p>Our Mission</p>
                     </a>
-                    <a href="#">
-                        <p>ok</p>
+                    <a href="/#howitworks">
+                        <p>How the app works</p>
                     </a>
                 </div>
                 <div className="sb_footer_links_div">
                     <h4>Team</h4>
-                    <a href="#partners">
-                        <p>Partbers</p>
+                    <a href="/#partners">
+                        <p>Partners</p>
                     </a>
-                    <a href="#">
-                        <p>ECTE website</p>
+                    <a href="http://www.ecte.gr/">
+                        <p>ECTE Website</p>
                     </a>
-                    <a href="#">
-                        <p>LDI website</p>
+                    <a href="http://www.ldi-berlin.de/">
+                        <p>LDI Website</p>
                     </a>
                 </div>
                 <div className="sb_footer_links_div">
-                    <h4>EU</h4>
-                    <a href="#">
-                        <p>ok</p>
+                    <h4>Erasmus+</h4>
+                    <a href="https://erasmus-plus.ec.europa.eu/">
+                        <p>Erasmus+ Website</p>
                     </a>
-                    <a href="#">
-                        <p>ok</p>
+                    <a href="https://erasmus-plus.ec.europa.eu/programme-guide/part-b/key-action-2/small-scale-partnerships">
+                        <p>SmallScale Partnerships</p>
                     </a>
                   
                 </div>
                 <div className="sb_footer_links_div">
                     <h4>Contact</h4>
                     <div className="socialMedia">
-                    <a href="/contact">
+                    <Link to="/contact">
                         <p>Contact us</p>
-                    </a>
-                        <p><img src="" alt="" />Linkdin</p>
+                    </Link>
+                        <p><SocialIcon style={{ height: 25, width: 25 }}  url="https://www.linkedin.com/company/88040455/in.com/in/jaketrent" />
+</p>
   
                         </div>
 
