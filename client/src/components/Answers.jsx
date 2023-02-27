@@ -2,11 +2,11 @@ import {  useNavigate } from "react-router-dom";
 import React , {useState , useEffect , useRef, useCallback } from "react";
 import { useReactToPrint } from 'react-to-print';
 import axios from "axios";
-import {RemoteOnly} from "./RemoteOnly";
-import {RemoteFirst} from "./RemoteFirst";
-import {RemoteAllowed} from "./RemoteAllowed";
-import {Hybrid} from "./Hybrid";
-import {Physical} from "./Physical";
+import RemoteOnly from "./RemoteOnly";
+import RemoteFirst from "./RemoteFirst";
+import RemoteAllowed from "./RemoteAllowed";
+import Hybrid from "./Hybrid";
+import Physical from "./Physical";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash , faDownload  } from "@fortawesome/free-solid-svg-icons";
 import "../style/Answers.scss"
@@ -42,19 +42,20 @@ const useToggle = (initialState = false) => {
 
 
 const [toggle, setToggle] = useToggle();
-const componentRef = useRef();
-  const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
-  });
+// const componentRef = useRef();
+//   const handlePrint = useReactToPrint({
+//     content: () => componentRef.current,
+//   });
     return (
       <>
+      <div className="background-answers" >
       <div className="dis-ans">
         <button 
 onClick={setToggle}      >
      {!toggle ? 'Show answers' : 'Hide answers'}
    </button>   
    </div>
-   <div className="grid-answers">
+   <div className={!toggle ? 'grid-answers' : 'grid-answers display'}>
       
      
       {answers &&
@@ -64,7 +65,11 @@ onClick={setToggle}      >
         Created At: {answer.date}
 
        </h5>
+       <br></br>
+      
       {toggle &&  <div>
+        <h5>
+          Company info</h5>
          <div>
          Industry of the organization : {answer.industry}
        </div>
@@ -80,9 +85,9 @@ onClick={setToggle}      >
        <div>
          Optimal structure : {answer.bestStructure}
        </div>
-       <h3>
+       <h5>
        How would you characterize your organization in terms of its Cultural Readiness for Remote Work?
-       </h3>
+       </h5>
        <div>
        Transparency of management/ownership with their team: {answer.q1}
        </div>
@@ -98,9 +103,9 @@ onClick={setToggle}      >
        <div>
        Documentation of company processes: {answer.q5}
        </div>
-       <h3>
+       <h5>
        How would you characterize your organization in terms of its Technical Readiness for Remote Work?
-       </h3>
+       </h5>
        <div>
        Digital communication tools : {answer.q6}
        </div>
@@ -110,12 +115,14 @@ onClick={setToggle}      >
        <div>
        Remote IT infrastructure to enable remote work (IT protocols/tools/laptops) : {answer.q8}
        </div>
-       <h4>
+       <h5>
+          Existing Practices</h5>
+        <div> 
        Have you created documented procedures about remote working in your company? : {answer.q9}
-       </h4>
-       <h4>
+       </div>
+       <div> 
        Do you use any project management platforms for remote working in your company? : {answer.q10}
-       </h4>
+       </div> 
        <div>
        How would you equip and educate your team members?: {answer.comments}
        </div>
@@ -126,31 +133,34 @@ onClick={setToggle}      >
 
        <div>
         
-       Action Plan <a onClick={handlePrint}>   <FontAwesomeIcon className="download" icon={faDownload} /></a>
  
-      <div className="hid">
+      <div className="hid2">
       {answer.result > 16 &&
-      < RemoteOnly  ref={componentRef} />
+      < RemoteOnly  />
       }
       {answer.result > 12 && answer.result <=16 &&
-     < RemoteFirst ref={componentRef} />
+     < RemoteFirst  />
       }
       {answer.result >8 && answer.result <=12 &&
-      < RemoteAllowed ref={componentRef} />
+      < RemoteAllowed  />
       }
       {answer.result > 4 && answer.result <=8 &&
-< Hybrid ref={componentRef} />      
+< Hybrid  />      
       }
        {answer.result <= 4 &&
-      < Physical ref={componentRef} />
+      < Physical  />
       }
       </div>
        </div>
        <a onClick={() => {
                           remove(answer._id);
                         }}> Delete answers <FontAwesomeIcon className="trash" icon={faTrash} /></a>
-       </ div> );
+                               <hr></hr>
+       </ div> 
+       
+       );
             })}
+            </div>
             </div>
       </>
     );

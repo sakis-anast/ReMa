@@ -159,9 +159,9 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <a className="link-nav-big" href="/#project">
+              <Link className="link-nav-big" to="/">
                 PROJECT
-              </a>
+              </Link>
             </Button>
             <Button
               onClick={handleCloseNavMenu}

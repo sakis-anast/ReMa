@@ -159,28 +159,3 @@ padding-bottom: 75px;
     input[type=text]{
 width: 25%;    }
 }
-.dis-ans{
-  margin-left:  auto;
-  margin-right: auto;
-  margin-bottom: 15px;
-  margin-top: 5px;
-  text-align: center;
-  button{
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #37517e;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;}
-    button:hover {background-color: #194ad2}
-
-    button:active {
-      background-color: #194ad2;
-      box-shadow: 0 5px #666;
-      transform: translateY(4px);
-    }
-}

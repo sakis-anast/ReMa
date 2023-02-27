@@ -10,7 +10,7 @@ function Login({setLoggedIn, setLoading }) {
   const [type, setType]=useState('password');
   const [icon, setIcon]=useState(eyeOff);
   const login = require("../logos/login.PNG");
-
+const [email , setUsername] = useState(false)
   const handleToggle=()=>{    
     if(type==='password'){
       setIcon(eye);      

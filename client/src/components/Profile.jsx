@@ -1,6 +1,5 @@
 import {  useNavigate } from "react-router-dom";
 import React , {useState , useEffect} from "react";
-
 function Profile({loggedIn , user}) {
   const navigate = useNavigate();
   useEffect(() => {
@@ -10,7 +9,7 @@ function Profile({loggedIn , user}) {
   },[]);
     return (
       <>
-        <div>
+            <div>
        Name : {user.username}
         </div>
         <div>
