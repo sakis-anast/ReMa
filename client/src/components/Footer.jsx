@@ -53,8 +53,8 @@ return (
                     <Link to="/contact">
                         <p>Contact us</p>
                     </Link>
-                        <p><SocialIcon style={{ height: 25, width: 25 }}  url="https://www.linkedin.com/company/88040455/in.com/in/jaketrent" />
-</p>
+                        <SocialIcon style={{ height: 25, width: 25 }}  url="https://www.linkedin.com/company/88040455/in.com/in/jaketrent" />
+
   
                         </div>
 

@@ -9,7 +9,7 @@ import {Hybrid} from "./Hybrid";
 import {Physical} from "./Physical";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash , faDownload  } from "@fortawesome/free-solid-svg-icons";
-import "../style/Style.scss"
+import "../style/Answers.scss"
 
 function Answers({loggedIn , answers,user , setAnswers }) {
   const navigate = useNavigate();
@@ -61,7 +61,7 @@ onClick={setToggle}      >
             answers.map((answer) => {
               return ( < div className="answers" key={answer._id}> 
               <h5>
-        Created At: {answer.createdAt}
+        Created At: {answer.date}
 
        </h5>
       {toggle &&  <div>
@@ -148,7 +148,7 @@ onClick={setToggle}      >
        </div>
        <a onClick={() => {
                           remove(answer._id);
-                        }}>  <FontAwesomeIcon className="trash" icon={faTrash} /></a>
+                        }}> Delete answers <FontAwesomeIcon className="trash" icon={faTrash} /></a>
        </ div> );
             })}
             </div>

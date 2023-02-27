@@ -177,9 +177,7 @@ button {
     width: inherit;
   }
 }
-.answers{
-  border: 1px solid black;
-}
+
 /* .action{
   display: none;
 } */
@@ -212,10 +210,6 @@ button {
   display: none;
 }
 
-.grid-answers{
 
-    text-align: center;
-
-  }
 
 

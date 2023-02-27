@@ -120,9 +120,9 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   {" "}
-                  <Link className="link-nav-small" to="/partners">
+                  <a className="link-nav-small" href="/#partners">
                   Partners{" "}
-                  </Link>
+                  </a>
                 </Typography>
               </MenuItem>
               
@@ -167,18 +167,18 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <Link className="link-nav-big" href="/#mission">
-              Partners
-              </Link>
+               <a className="link-nav-big" href="/#partners">
+                PARTNERS
+              </a>
             </Button>
             <Button
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
              
-              <a className="link-nav-big" href="/#contact">
+              <Link className="link-nav-big" to="/contact">
                 CONTACT US{" "}
-              </a>
+              </Link>
             </Button>
           </Box>
           
@@ -300,7 +300,7 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
               <Typography textAlign="center">
                 {" "}
                 <Link className="link-nav-small" to="/#partners">
-                Partners{" "}
+                PARTNERS{" "}
                 </Link>
               </Typography>
             </MenuItem>
@@ -346,7 +346,7 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
             sx={{ my: 2, color: "white", display: "block" }}
           >
             <Link className="link-nav-big" to="#partners">
-            Partners
+            PARTNERS
             </Link>
           </Button>
           {/* <Button

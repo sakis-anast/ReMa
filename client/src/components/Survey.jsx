@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import {  useNavigate } from "react-router-dom";
 import axios from "axios";
+import "../style/Survey.scss"
 
 export default function App({loggedIn , user , setLoggedIn}) {
   const navigate = useNavigate();
@@ -48,7 +49,8 @@ export default function App({loggedIn , user , setLoggedIn}) {
     q10: data.q10,
     comments : data.comment,
     result: res,
-    owner : user._id
+    owner : user._id,
+    date : new Date().toLocaleString()
     })
     .then(({ data }) => {
       console.log(data);
@@ -63,17 +65,20 @@ export default function App({loggedIn , user , setLoggedIn}) {
   };
 
   return (
-    <div className="answers-container">
-      <h2>Remote Management for SMEs (ReMa)</h2>
-      <p>
-        This questionnaire survey serves the purpose of measuring the SME's
-        readiness in adopting remote management strategy and is conducive in the
-        curriculum development in Remote Management, in the context of Remote
-        Management for SMEs (ReMa) a KA2 Erasmus+ Project
-        (2021-2-CZ01-KA210-VET-000051063)
-      </p>
+    <div className="backround">
+    <div className="survey">
+      <h2>Remote Management Readiness </h2>
+      <br></br>
       <form onSubmit={handleSubmit(onSubmit)}>
+      
         <Form.Group className="mb-3" controlId="industry">
+        <label className="category" >
+          {" "}
+          <h5>
+          Company info</h5>
+        </label>
+        <hr></hr>
+
           <Form.Label>
             Please indicate the industry of your organization
           </Form.Label>
@@ -217,11 +222,13 @@ export default function App({loggedIn , user , setLoggedIn}) {
           {errors.best && <p className="errorMsg">{errors.best.message}</p>}
         </Form.Group>
         <br></br>
-        <label>
+        <label className="category" >
           {" "}
+          <h5>
           How would you characterize your organization in terms of its Cultural
-          Readiness for Remote Work?
+          Readiness for Remote Work?</h5>
         </label>
+        <hr></hr>
         <Form.Group className="mb-3" controlId="q1">
           <Form.Label>
             Transparency of management/ownership with their team
@@ -358,11 +365,13 @@ export default function App({loggedIn , user , setLoggedIn}) {
           {errors.q5 && <p className="errorMsg">{errors.q5.message}</p>}
         </Form.Group>
         <br></br>
-        <label>
+        <label className="category"  >
           {" "}
+          <h5>
           How would you characterize your organization in terms of its Technical
-          Readiness for Remote Work?
+          Readiness for Remote Work?</h5>
         </label>
+        <hr></hr>
         <Form.Group className="mb-3" controlId="q6">
           <Form.Label>Digital communication tools</Form.Label>
           <Form.Check
@@ -446,7 +455,14 @@ export default function App({loggedIn , user , setLoggedIn}) {
           {errors.q8 && <p className="errorMsg">{errors.q8.message}</p>}
         </Form.Group>
         <br></br>
+       
         <Form.Group className="mb-3" controlId="q9">
+        <label className="category" >
+          {" "}
+          <h5>
+          Existing Practices</h5>
+        </label>
+        <hr></hr>
           <Form.Label>
             Have you created documented procedures about remote working in your
             company?
@@ -530,6 +546,7 @@ export default function App({loggedIn , user , setLoggedIn}) {
           Submit
         </Button>
       </form>
+    </div>
     </div>
   );
 }

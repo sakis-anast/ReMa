@@ -1,0 +1,38 @@
+.category, h2, h5{
+    text-align: center;
+}
+.backround{
+    background-color: #37517e;
+    padding-bottom: 50px;
+}
+.survey{
+background-color: white;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 15px;
+    flex-direction: column;
+      width: 700px;
+      hr{
+        color:     black;
+        
+        width: 100%;
+    }
+      .mb-3{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+  
+      }
+      input[type=text]{
+  width: 70%;    }
+input{
+    border: 1px solid #37517e;
+
+}
+  button{
+    background-color: #37517e;
+  }
+  }

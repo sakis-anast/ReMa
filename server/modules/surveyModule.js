@@ -23,10 +23,13 @@ const SurveySchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
+    date:  String  
+    ,
   },
-  {
-    timestamps: true,
-  }
+  
+  
+  
+  
 );
 
 const Survey = mongoose.model("Survey", SurveySchema);

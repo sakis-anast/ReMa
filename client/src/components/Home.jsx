@@ -25,7 +25,7 @@ function Home() {
             <h1 className="hero-title">
             Remote Management for SMEs
             </h1>
-<p class="hero-text">
+<p className="hero-text">
   A KA210-VET Erasmus+ project for
 Small-scale partnerships in the field of vocational
 education and training about Remote Management         </p>
