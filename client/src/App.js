@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Navbar from "./components/Navbar";
 //importing components
-import  "./style/Style.scss";
 import SignUp from "./components/SignUp";
 import Survey from "./components/Survey";
 import Login from "./components/Login";

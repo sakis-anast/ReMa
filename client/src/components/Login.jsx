@@ -10,7 +10,10 @@ function Login({setLoggedIn, setLoading }) {
   const [type, setType]=useState('password');
   const [icon, setIcon]=useState(eyeOff);
   const login = require("../logos/login.PNG");
-const [email , setUsername] = useState(false)
+const [email , setEmail] = useState(false)
+const [activeEmail , setActiveEmail] = useState("choice")
+const [activeUsername , setaActiveUsername] = useState("choice active")
+
   const handleToggle=()=>{    
     if(type==='password'){
       setIcon(eye);      
@@ -24,6 +27,7 @@ const [email , setUsername] = useState(false)
   //user input values
   let [values, setValues] = useState({
     username: "",
+    email: "",
     password: "",
   });
 
@@ -36,6 +40,7 @@ const [email , setUsername] = useState(false)
 //authenticate the user and passing his data to the local storage
   const submitHandler = async (event) => {
     event.preventDefault();
+    if(!email){
       const { username, password } = values;
       await axios
       .post("http://localhost:3636/user/login", {
@@ -50,11 +55,45 @@ const [email , setUsername] = useState(false)
           setLoggedIn(true);
         } else {
          alert(data.message)
+         Array.from(event.target).forEach((e) => (e.value = ""));
+       
         }
-      });
+      });}
+      else{
+        const { email, password } = values;
+        await axios
+        .post("http://localhost:3636/user/login/email", {
+          email,
+          password,
+        })
+        .then(({ data }) => {
+          console.log(data);
+          if (data.token) {
+            localStorage.setItem("token", data.token);
+            navigate("/");
+            setLoggedIn(true);
+          } else {
+           alert(data.message)
+           Array.from(event.target).forEach((e) => (e.value = ""));
+
+          }
+        });}
+      
   };
 
+  function changeToEmail(){
+    setEmail(true)
+    setaActiveUsername("choice")
+    setActiveEmail("choice active")
+  }
+  function changeToUsername(){
+    setEmail(false)
+    setActiveEmail("choice")
+    setaActiveUsername("choice active")
+
+  }
   
+
     
   return (
     <>
@@ -69,17 +108,24 @@ const [email , setUsername] = useState(false)
           onSubmit={(e) => submitHandler(e)}
         >
           <div className="login-form-div">
-            {/* <img src={logo} alt="" className="login-form-img" /> */}
             <h1 className="login-form-header">Login</h1>
+            <div className="pick"> <span className= {activeUsername} onClick={changeToUsername} >User</span> <span className= {activeEmail} onClick={changeToEmail} > Email</span> </div>
           </div>
           <div className="login-inputs-container">
+            {!email ? 
             <input
               type="text"
-              placeholder="username"
+              placeholder="user"
               name="username"
               onChange={(e) => changeHandler(e)}
               required
-            />
+            /> : <input
+            type="text"
+            placeholder="email"
+            name="email"
+            onChange={(e) => changeHandler(e)}
+            required
+          />}
            
             <div className="eye">
             <input

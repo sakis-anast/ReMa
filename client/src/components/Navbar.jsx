@@ -11,6 +11,8 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaUserCircle } from "react-icons/fa";
+
 import "../style/Navbar.scss"
 
 import {
@@ -197,7 +199,7 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
                 onClick={handleOpenUserMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                PROFILE
+                <FaUserCircle />
               </Button>
             <Menu
               sx={{ mt: "45px" }}

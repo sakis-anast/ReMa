@@ -49,7 +49,21 @@ const userLogin = async (req, res) => {
     res.send({ message: "Incorrect username" });
   }
 };
-
+const userLoginEmail = async (req, res) => {
+  let user = await User.findOne({ email: req.body.email });
+  if (user) {
+    bcrypt.compare(req.body.password, user.password, function (err, result) {
+      if (result) {
+        let token = jwt.sign({ id: user._id }, "secret");
+        res.send({ token });
+      } else {
+        res.send({ message: "Incorrect password" });
+      }
+    });
+  } else {
+    res.send({ message: "Incorrect email" });
+  }
+};
 const userVerify = async (req, res) => {
   jwt.verify(req.body.token, "secret", async (err, payload) => {
     if (payload) {
@@ -65,4 +79,5 @@ module.exports = {
   userSignup,
   userLogin,
   userVerify,
+  userLoginEmail,
 };

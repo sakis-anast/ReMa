@@ -1,6 +1,6 @@
 import "../style/Footer.scss"
 import { Link } from "react-router-dom";
-import { SocialIcon } from 'react-social-icons';
+import { FaLinkedinIn } from 'react-icons/fa';
 
 function Footer(){
     const eu = require("../logos/eu.png");
@@ -53,7 +53,8 @@ return (
                     <Link to="/contact">
                         <p>Contact us</p>
                     </Link>
-                        <SocialIcon style={{ height: 25, width: 25 }}  url="https://www.linkedin.com/company/88040455/in.com/in/jaketrent" />
+                    <a href="https://www.linkedin.com/company/88040455/in.com/in/jaketrent"> <FaLinkedinIn /></a>
+                        
 
   
                         </div>

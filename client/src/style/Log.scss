@@ -159,3 +159,20 @@ padding-bottom: 75px;
     input[type=text]{
 width: 25%;    }
 }
+
+
+.choice{
+opacity: 0.9;
+  cursor: pointer;
+  background-color: white;
+}
+.active{
+  opacity: 1;
+
+  font-weight :bold;
+
+}
+.pick{
+  text-align: center;
+  color: #37517e;
+}

@@ -536,12 +536,18 @@ export default function App({loggedIn , user , setLoggedIn}) {
         </Form.Group>
         <br></br>
         <p>
-          The European Commission support for the production of this publication
+          1. The European Commission support for the production of this publication
           does not constitute an endorsement of the contents which reflects the
           views only of the authors, and the Commission cannot be held
           responsible for any use which may be made of the information contained
-          therein.
-        </p>
+          therein.</p> 
+          <input type="checkbox" name="agreementEU" className="agreement" required/> <span className="terms">I accept the terms 1 </span>
+          <br></br> <br></br>
+
+        <p>2. The survey will be used by ReMa Team in whichever way they want.</p>
+           <input type="checkbox" name="agreementReMa" className="agreement" required/>  <span className="terms">I accept the terms 2 </span>
+          <br></br>
+          <br></br>
         <Button type="submit" variant="primary">
           Submit
         </Button>
