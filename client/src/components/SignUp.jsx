@@ -6,7 +6,8 @@ import { Icon } from 'react-icons-kit'
 import {eye} from 'react-icons-kit/feather/eye'
 import {eyeOff} from 'react-icons-kit/feather/eyeOff'
 import "../style/Log.scss"
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function SignUp({loggedIn}) {
   const navigate = useNavigate();
   const [verify, setVerify] = useState(false);
@@ -15,7 +16,18 @@ function SignUp({loggedIn}) {
   const [type2, setType2]=useState('password');
   const [icon2, setIcon2]=useState(eyeOff);
   const login = require("../logos/login.PNG");
-
+  const toastOptions = {
+    position: "top-right",
+    autoClose: 1000,
+    theme: "light",
+    pauseOnHover: true,
+    draggable: true,
+  };
+  useEffect(() => {
+    if(loggedIn){
+      navigate("/");
+    }
+  },[loggedIn]);
   const handleToggle=()=>{    
     if(type==='password'){
       setIcon(eye);      
@@ -65,24 +77,20 @@ function SignUp({loggedIn}) {
         .then(({ data }) => {
           if (data.message === "New User Created") {
             navigate("/login");
-            alert(data.message)
           } else {
-            alert(data.message);
+            toast.error(data.message, toastOptions)
           }
         });  }
         else {
-          alert("passwords don't match")
+          toast.error("Passwords don't match", toastOptions)
+
         }
   };
 //recaptcha function
 function onChange(value) {
   setVerify(true);
 }
-// let recaptchaInstance;
-// useEffect(() => {
-//   recaptchaInstance.reset();
-// },[]);
-// create a reset function
+
 
   return (
     <>
@@ -97,7 +105,7 @@ function onChange(value) {
           onSubmit={(e) => submitHandler(e)}
         >
           <div className="signup-form-div">
-            <h1 className="signup-form-header">Sign up</h1>
+            <h1 className="signup-form-header">SignUp</h1>
           </div>
           <div className="signup-inputs-container">
             <input
@@ -149,6 +157,8 @@ function onChange(value) {
         </form>
       </div>
       </div>
+      <ToastContainer/>
+
     </>
   );
 }

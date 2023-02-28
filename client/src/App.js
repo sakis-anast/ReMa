@@ -13,7 +13,7 @@ import Footer from "./components/Footer";
 import ScrollTop from "./components/ScrollTop";
 import Partners from "./components/Partners";
 import Contact from "./components/Contact";
-import Profile from "./components/Profile";
+// import Profile from "./components/Profile";
 import Answers from "./components/Answers";
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -38,7 +38,6 @@ function App() {
     }
   },[loggedIn]);
 
-  // console.log(answers)
 
  
   return (
@@ -47,17 +46,15 @@ function App() {
       <ScrollTop/>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/signup" element={<SignUp/>}></Route>
+        <Route path="/signup" element={<SignUp   loggedIn={loggedIn}/> }></Route>
         <Route path="/survey" element={<Survey  loggedIn={loggedIn} user ={user} setLoggedIn={setLoggedIn}/>}></Route>
         <Route
           path="/login"
-          element={<Login setLoggedIn={setLoggedIn} setLoading={setLoading}/>}
+          element={<Login setLoggedIn={setLoggedIn}   loggedIn={loggedIn} setLoading={setLoading}/>}
         ></Route>
-        {/* <Route path="/ecte" element={<Ecte />}></Route>
-        <Route path="/ldi" element={<Ldi />}></Route> */}
         <Route path="/partners" element={<Partners />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/profile" element={<Profile  loggedIn={loggedIn}  user ={user}/>}></Route>
+        {/* <Route path="/profile" element={<Profile  loggedIn={loggedIn}  user ={user}/>}></Route> */}
         <Route path="/answers" element={<Answers  loggedIn={loggedIn}  user ={user} answers={answers} setAnswers={setAnswers} />}></Route>
       </Routes>
       <Footer/>

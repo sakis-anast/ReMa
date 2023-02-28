@@ -1,6 +1,5 @@
 import {  useNavigate } from "react-router-dom";
-import React , {useState , useEffect , useRef, useCallback } from "react";
-import { useReactToPrint } from 'react-to-print';
+import React , {useState , useEffect ,  useCallback } from "react";
 import axios from "axios";
 import RemoteOnly from "./RemoteOnly";
 import RemoteFirst from "./RemoteFirst";
@@ -8,7 +7,7 @@ import RemoteAllowed from "./RemoteAllowed";
 import Hybrid from "./Hybrid";
 import Physical from "./Physical";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash , faDownload  } from "@fortawesome/free-solid-svg-icons";
+import { faTrash   } from "@fortawesome/free-solid-svg-icons";
 import "../style/Answers.scss"
 
 function Answers({loggedIn , answers,user , setAnswers }) {
@@ -42,10 +41,7 @@ const useToggle = (initialState = false) => {
 
 
 const [toggle, setToggle] = useToggle();
-// const componentRef = useRef();
-//   const handlePrint = useReactToPrint({
-//     content: () => componentRef.current,
-//   });
+
     return (
       <>
       <div className="background-answers" >

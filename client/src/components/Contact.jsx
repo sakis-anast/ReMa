@@ -21,7 +21,6 @@ function Contact() {
       )
       .then(
         (result) => {
-          alert("message sent");
           navigate("/")
         },
         (error) => {
@@ -32,7 +31,7 @@ function Contact() {
 
   return (
     <div className="contact">
-      <div><img src={question} alt="" /></div>
+      <div className="q-cont"><img src={question} alt="question-illustration" /></div>
     <StyledContactForm id="contact">
       <form ref={form} onSubmit={sendEmail}>
         <label>Name</label>

@@ -119,14 +119,14 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
                   </Link>
                 </Typography>
               </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
+              {/* <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   {" "}
                   <a className="link-nav-small" href="/#partners">
                   Partners{" "}
                   </a>
                 </Typography>
-              </MenuItem>
+              </MenuItem> */}
               
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
@@ -165,14 +165,14 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
                 PROJECT
               </Link>
             </Button>
-            <Button
+            {/* <Button
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
                <a className="link-nav-big" href="/#partners">
                 PARTNERS
               </a>
-            </Button>
+            </Button> */}
             <Button
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
@@ -217,14 +217,14 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
               open={Boolean(anchorElUser)}
               onClick={handleCloseUserMenu}
             >
-              <MenuItem onClick={handleCloseNavMenu}>
+              {/* <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   {" "}
                   <Link className="link-nav-small" to="/profile">
                     INFO{" "}
                   </Link>
                 </Typography>
-              </MenuItem>
+              </MenuItem> */}
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   {" "}
@@ -298,14 +298,14 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
                 </Link>
               </Typography>
             </MenuItem>
-            <MenuItem onClick={handleCloseNavMenu}>
+            {/* <MenuItem onClick={handleCloseNavMenu}>
               <Typography textAlign="center">
                 {" "}
                 <Link className="link-nav-small" to="/#partners">
                 PARTNERS{" "}
                 </Link>
               </Typography>
-            </MenuItem>
+            </MenuItem> */}
             <MenuItem onClick={handleCloseNavMenu}>
               <Typography textAlign="center">
                 {" "}
@@ -343,28 +343,12 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
               PROJECT{" "}
             </Link>
           </Button>
-          <Button
+          {/* <Button
             onClick={handleCloseNavMenu}
             sx={{ my: 2, color: "white", display: "block" }}
           >
             <Link className="link-nav-big" to="#partners">
             PARTNERS
-            </Link>
-          </Button>
-          {/* <Button
-            onClick={handleCloseNavMenu}
-            sx={{ my: 2, color: "white", display: "block" }}
-          >
-            <Link className="link-nav-big" to="/ldi">
-              LDI{" "}
-            </Link>
-          </Button>
-          <Button
-            onClick={handleCloseNavMenu}
-            sx={{ my: 2, color: "white", display: "block" }}
-          >
-            <Link className="link-nav-big" to="/ecte">
-              ECTE{" "}
             </Link>
           </Button> */}
           <Button
@@ -402,50 +386,7 @@ const Navbar = ({ loggedIn, setLoggedIn, setAnswers, setUser }) => {
       ) }
     </AppBar>
 
-    //     <nav className="navbar">
-    //       {!loggedIn ? (
-    //       <div className="topnav" id="myTopnav">
-    //       <Link to="/" className="active"> Project</Link>
-    //   <div className="dropdown">
-    //     <button className="dropbtn">Partners
-    //     </button>
-    //     <div className="dropdown-content">
-    //     <Link to="/metalaxis"> Metalaxis</Link>
-    //     <Link to="/ldi"> LDI</Link>
-    //     <Link to="/ecte"> ECTE</Link>
-    //     </div>
-    //   </div>
-    //   <Link to="/contact"> Contact Us</Link>
-    //   <Link to="/signup"> Sign Up</Link>
-    //   <Link to="/login"> Login</Link>
-    // </div>):(
-    //   <div className="topnav" id="myTopnav">
-    //   <Link to="/" className="active"> Project</Link>
-    // <div className="dropdown">
-    // <button className="dropbtn">Partners
-    // </button>
-    // <div className="dropdown-content">
-    //     <Link to="/metalaxis"> Metalaxis</Link>
-    //     <Link to="/ldi"> LDI</Link>
-    //     <Link to="/ecte"> ECTE</Link>
-    //     </div>
-    // </div>
-    // <Link to="/contact"> Contact Us</Link>
-    // <div className="dropdown">
-    // <button className="dropbtn">Profile
-    // </button>
-    // <div className="dropdown-content">
-    // <Link to="/profile"> Profile</Link>
-    // <Link to="/answers"> Your Answers</Link>
-
-    //               <Link href="#" onClick={() => {
-    //                 logOut();}}>Logout</Link>
-    // </div>
-    // </div>
-    // <Link to="/survey"> Survey</Link>
-    // </div>
-    // )}
-    //     </nav>
+    
   );
 };
 

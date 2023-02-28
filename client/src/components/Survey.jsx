@@ -13,7 +13,6 @@ export default function App({loggedIn , user , setLoggedIn}) {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  // const [result, setResult] = useState("");
 
   useEffect(() => {
     if(!loggedIn){
@@ -60,7 +59,6 @@ export default function App({loggedIn , user , setLoggedIn}) {
     .then(response => {
       console.log(response);
     })
-    alert("your answers have been saved")
     navigate("/answers")
   };
 

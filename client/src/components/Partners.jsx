@@ -9,7 +9,6 @@ function Partners() {
   const metalaxis = require("../logos/metalaxis.png");
   const ldi = require("../logos/LDI_logo.JPG");
   const ecte = require("../logos/ECTE_logo_EN.jpg");
-  const meeting = require("../logos/meeting.jpg");
   const [openMetalaxisModal, setOpenMetalaxisModal] = useState(false);
   const [openLdiModal, setOpenLdiModal] = useState(false);
   const [openEcteModal, setOpenEcteModal] = useState(false);

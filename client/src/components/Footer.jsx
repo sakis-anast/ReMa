@@ -27,8 +27,8 @@ return (
                 </div>
                 <div className="sb_footer_links_div">
                     <h4>Team</h4>
-                    <a href="/#partners">
-                        <p>Partners</p>
+                    <a href="https://metalaxis.net/">
+                        <p>Metalaxis website</p>
                     </a>
                     <a href="http://www.ecte.gr/">
                         <p>ECTE Website</p>

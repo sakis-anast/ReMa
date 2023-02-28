@@ -176,3 +176,19 @@ opacity: 0.9;
   text-align: center;
   color: #37517e;
 }
+
+
+@media screen and (width <= 1050px){
+  
+    
+ 
+  .log{
+    display: grid;
+    grid-template-columns: 1fr ;
+      align-items: center;
+     padding-bottom: 75px;
+     img{
+      display: none;}
+    }
+  
+    }

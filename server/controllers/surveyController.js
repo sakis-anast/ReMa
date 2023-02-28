@@ -8,7 +8,6 @@ const getSurvey = async (req, res) => {
 }catch{
   res.send({message : "no survey"})
 }
-
 };
 const addSurvey = async (req, res) => {
   let newSurvey = new Survey(

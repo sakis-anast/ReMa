@@ -58,6 +58,23 @@ input{
   .terms{
     font-weight: bold;
   }
-//  input.agreement{
-// width: 15px;     
-// height: 15px; }
+  .errorMsg {
+    max-width: 350px;
+    color: #f21e08;
+    padding: 2px 0;
+    margin-top: 2px;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+
+   
+  @media screen and (width <= 750px){
+
+    .survey{
+      width: 450px;
+    }
+         
+         
+          
+       }

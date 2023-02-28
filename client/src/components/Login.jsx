@@ -5,7 +5,9 @@ import { Icon } from 'react-icons-kit'
 import {eye} from 'react-icons-kit/feather/eye'
 import {eyeOff} from 'react-icons-kit/feather/eyeOff'
 import "../style/Log.scss"
-function Login({setLoggedIn, setLoading }) {
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+function Login({setLoggedIn, setLoading , loggedIn}) {
   const navigate = useNavigate();
   const [type, setType]=useState('password');
   const [icon, setIcon]=useState(eyeOff);
@@ -14,6 +16,18 @@ const [email , setEmail] = useState(false)
 const [activeEmail , setActiveEmail] = useState("choice")
 const [activeUsername , setaActiveUsername] = useState("choice active")
 
+const toastOptions = {
+  position: "top-right",
+  autoClose: 1000,
+  theme: "light",
+  pauseOnHover: true,
+  draggable: true,
+};
+useEffect(() => {
+  if(loggedIn){
+    navigate("/");
+  }
+},[loggedIn]);
   const handleToggle=()=>{    
     if(type==='password'){
       setIcon(eye);      
@@ -48,16 +62,15 @@ const [activeUsername , setaActiveUsername] = useState("choice active")
         password,
       })
       .then(({ data }) => {
-        console.log(data);
         if (data.token) {
           localStorage.setItem("token", data.token);
           navigate("/");
           setLoggedIn(true);
         } else {
-         alert(data.message)
-         Array.from(event.target).forEach((e) => (e.value = ""));
-       
-        }
+          toast.error(data.message , toastOptions)
+          Array.from(event.target).forEach((e) => (e.value = ""));
+
+         }
       });}
       else{
         const { email, password } = values;
@@ -67,13 +80,12 @@ const [activeUsername , setaActiveUsername] = useState("choice active")
           password,
         })
         .then(({ data }) => {
-          console.log(data);
           if (data.token) {
             localStorage.setItem("token", data.token);
             navigate("/");
             setLoggedIn(true);
           } else {
-           alert(data.message)
+            toast.error(data.message , toastOptions)
            Array.from(event.target).forEach((e) => (e.value = ""));
 
           }
@@ -140,12 +152,11 @@ const [activeUsername , setaActiveUsername] = useState("choice active")
             </div>
            
             <button className="conf">Login</button>
-            {/* <span>
-             I don't have an account ?<Link to="/signup"> Signup</Link>
-            </span> */}
+           
           </div>
         </form>
       </div>
+      <ToastContainer/>
       </div>
     </>
   );

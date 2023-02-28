@@ -1,8 +1,5 @@
 import "../style/Home.scss"
-import Contact from "./Contact"
 import Partners from "./Partners"
-import Footer from "./Footer"
-import ScrollTop from "./ScrollTop"
 import { useState } from 'react';
 import InfoModal from "./InfoModal";
 
@@ -14,7 +11,6 @@ function Home() {
 
   return (
     <>
-    {/* <ScrollTop/> */}
   
     <main>
 

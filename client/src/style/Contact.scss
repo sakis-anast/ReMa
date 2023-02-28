@@ -5,3 +5,19 @@
      padding-bottom: 75px;
   
   }
+  .q-cont{
+    img{
+   width: 550px;}
+  }
+  @media screen and (width <= 950px){
+.q-cont{
+  img{
+  display: none;}
+}
+.contact{
+  display: grid;
+  grid-template-columns: 1fr ;
+    align-items: center;
+   padding-bottom: 75px;}
+
+  }
