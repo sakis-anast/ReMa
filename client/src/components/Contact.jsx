@@ -94,4 +94,4 @@ const StyledContactForm = styled.div`
       border: none;
     }
   }
-`;
+`

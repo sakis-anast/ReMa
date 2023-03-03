@@ -108,25 +108,25 @@ function onChange(value) {
             <h1 className="signup-form-header">SignUp</h1>
           </div>
           <div className="signup-inputs-container">
+          <label>Username</label>
             <input
               type="text"
-              placeholder="username"
               name="username"
               onChange={(e) => changeHandler(e)}
               required
             />
+                        <label>Email</label>
             <input
               type="email"
-              placeholder="email"
               name="email"
               onChange={(e) => changeHandler(e)}
               required
             />
          
          <div className="eye">
+         <label>Password</label>
             <input
           type={type}
-          placeholder="password"
               name="password"
               onChange={(e) => changeHandler(e)}
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
@@ -136,9 +136,10 @@ function onChange(value) {
         <span onClick={handleToggle}><Icon icon={icon} size={25}/></span>
             </div>
             <div className="eye">
+            <label> Confirm Password</label>
+
             <input
           type={type2}
-          placeholder="confirm password"
               name="confirmPassword"
               onChange={(e) => changeHandler(e)}
               required
@@ -149,6 +150,7 @@ function onChange(value) {
                 <ReCAPTCHA
           sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
           onChange={onChange}
+          className="reCaptcha"
         />
         
             <button disabled={!verify} className="conf">Create User</button>

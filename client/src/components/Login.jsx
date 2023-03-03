@@ -7,6 +7,7 @@ import {eyeOff} from 'react-icons-kit/feather/eyeOff'
 import "../style/Log.scss"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import styled from "styled-components";
 function Login({setLoggedIn, setLoading , loggedIn}) {
   const navigate = useNavigate();
   const [type, setType]=useState('password');
@@ -124,25 +125,32 @@ useEffect(() => {
             <div className="pick"> <span className= {activeUsername} onClick={changeToUsername} >User</span> <span className= {activeEmail} onClick={changeToEmail} > Email</span> </div>
           </div>
           <div className="login-inputs-container">
-            {!email ? 
+            {!email ? <>
+              <label>Username</label>
             <input
               type="text"
               placeholder="user"
               name="username"
+              className="inputs"
               onChange={(e) => changeHandler(e)}
               required
-            /> : <input
+            /></> :<>
+            <label>Email</label>
+            <input
             type="text"
             placeholder="email"
+            className="inputs"
             name="email"
             onChange={(e) => changeHandler(e)}
             required
-          />}
+          /> </> }
            
             <div className="eye">
+            <label>Password</label>
             <input
           type={type}
-          placeholder="password"
+          placeholder={<Icon icon={icon} size={25}/>}
+          className="inputs"
               name="password"
               onChange={(e) => changeHandler(e)}
               required
@@ -158,8 +166,98 @@ useEffect(() => {
       </div>
       <ToastContainer/>
       </div>
+       <div className="contact">
+      <div className="q-cont"><img src={login} alt="question-illustration" /></div>
+    <StyledContactForm id="contact">
+      <form onSubmit={(e) => submitHandler(e)}>
+        <label> <span className= {activeUsername} onClick={changeToUsername} >User</span> <span className= {activeEmail} onClick={changeToEmail} > Email</span></label>
+        {!email ? 
+            <input
+              type="text"
+              placeholder="user"
+              name="username"
+              className="inputs"
+              onChange={(e) => changeHandler(e)}
+              required
+            /> : <input
+            type="text"
+            placeholder="email"
+            className="inputs"
+            name="email"
+            onChange={(e) => changeHandler(e)}
+            required
+          />}
+        <label>Password</label>
+        <div className="eye">
+        <input
+          type={type}
+              name="password"
+              onChange={(e) => changeHandler(e)}
+              required
+            />
+                    <span onClick={handleToggle}><Icon icon={icon} size={25}/></span>
+                    </div>
+                   
+            <button className="conf">Login</button>
+
+      </form>
+    </StyledContactForm>
+    </div>
     </>
   );
 }
 
 export default Login;
+const StyledContactForm = styled.div`
+  width: 400px;
+  margin-left:  auto;
+  margin-right: auto;
+  form {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    font-size: 16px;
+    input {
+      width: 400px;
+      height: 35px;
+      padding: 7px;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid rgb(220, 220, 220);
+      &:focus {
+        border: 2px solid rgba(0, 206, 158, 1);
+      }
+    }
+    textarea {
+      max-width: 100%;
+      min-width: 100%;
+      width: 100%;
+      max-height: 100px;
+      min-height: 100px;
+      padding: 7px;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid rgb(220, 220, 220);
+      &:focus {
+        border: 2px solid rgba(0, 206, 158, 1);
+      }
+    }
+    label {
+      margin-top: 1rem;
+    }
+    button {
+      margin-top: 2rem;
+      cursor: pointer;
+      background: #37517e;
+      color: white;
+      border: none;
+      width: 100%;
+      height: 35px;
+      padding: 7px;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid rgb(220, 220, 220);
+    }
+  }
+`
