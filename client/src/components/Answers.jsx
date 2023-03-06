@@ -8,24 +8,28 @@ import Hybrid from "./Hybrid";
 import Physical from "./Physical";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash   } from "@fortawesome/free-solid-svg-icons";
+import LoadingSpinner from "./LoadingSpinner";
 import "../style/Answers.scss"
 
-function Answers({loggedIn , answers,user , setAnswers }) {
+function Answers({loggedIn , answers,user , setAnswers , loading ,setLoading}) {
   const navigate = useNavigate();
   useEffect(() => {
     if(!loggedIn){
       navigate("/");
     }else{
+
       getAnswers() 
     }
   },[]);
 
   async function getAnswers() {
+    setLoading(true)
     await axios
     .post("http://localhost:3636/survey/get", { owner: user._id })
     .then(({ data }) => {
       setAnswers(data);
       console.log(data)
+      setLoading(false)
 
       });
   }
@@ -44,13 +48,15 @@ const [toggle, setToggle] = useToggle();
 
     return (
       <>
+     {loading ? <LoadingSpinner /> : 
       <div className="background-answers" >
+        {answers.length ?
       <div className="dis-ans">
-        <button 
+       <button 
 onClick={setToggle}      >
      {!toggle ? 'Show answers' : 'Hide answers'}
-   </button>   
-   </div>
+   </button>  
+   </div>: <div className="no-answers" ><h1>No answered survey yet</h1> </div>} 
    <div className={!toggle ? 'grid-answers' : 'grid-answers display'}>
       
      
@@ -157,7 +163,7 @@ onClick={setToggle}      >
        );
             })}
             </div>
-            </div>
+            </div>} 
       </>
     );
   }

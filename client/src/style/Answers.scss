@@ -80,7 +80,14 @@
   .display{
     width: 70%;
   }
-  .background-answers{
+  .background-answers {
     background-color: #37517e;
     padding-bottom: 170px;
+  }
+  .no-answers{
+    background-color: #37517e;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    color: white;
+    text-align: center;
   }

@@ -7,7 +7,6 @@ import {eyeOff} from 'react-icons-kit/feather/eyeOff'
 import "../style/Log.scss"
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import styled from "styled-components";
 function Login({setLoggedIn, setLoading , loggedIn}) {
   const navigate = useNavigate();
   const [type, setType]=useState('password');
@@ -147,7 +146,6 @@ useEffect(() => {
             <label>Password</label>
             <input
           type={type}
-          placeholder={<Icon icon={icon} size={25}/>}
           className="inputs"
               name="password"
               onChange={(e) => changeHandler(e)}

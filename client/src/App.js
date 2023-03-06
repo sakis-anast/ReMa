@@ -50,12 +50,12 @@ function App() {
         <Route path="/survey" element={<Survey  loggedIn={loggedIn} user ={user} setLoggedIn={setLoggedIn}/>}></Route>
         <Route
           path="/login"
-          element={<Login setLoggedIn={setLoggedIn}   loggedIn={loggedIn} setLoading={setLoading}/>}
+          element={<Login setLoggedIn={setLoggedIn}   loggedIn={loggedIn} />}
         ></Route>
         <Route path="/partners" element={<Partners />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         {/* <Route path="/profile" element={<Profile  loggedIn={loggedIn}  user ={user}/>}></Route> */}
-        <Route path="/answers" element={<Answers  loggedIn={loggedIn}  user ={user} answers={answers} setAnswers={setAnswers} />}></Route>
+        <Route path="/answers" element={<Answers  loggedIn={loggedIn}  user ={user} answers={answers} setAnswers={setAnswers} loading={loading} setLoading={setLoading} />}></Route>
       </Routes>
       <Footer/>
     </BrowserRouter>
