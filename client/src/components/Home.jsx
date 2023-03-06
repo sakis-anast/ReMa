@@ -15,14 +15,39 @@ function Home() {
     <main>
 
       <section  id="project" className="section-hero">
+        
         <div className="hero-container">
+        <div className="rema-logo">
+{/* <img src={logo} alt="Rema Logo" /> */}
+<div>
+<svg className="circle1" height="140" width="140">
+	<circle className="circle" cx="70" cy="70" r="66" stroke="#ffffff" stroke-width="5" fill-opacity="0" />
+</svg>
+<svg className="circle2" height="140" width="140">
+	<circle className="circle" cx="70" cy="70" r="66" stroke="#ffffff" stroke-width="5" fill-opacity="0" />
+</svg>
+</div>
+<div className="logo-text" >
+<h1> <span className="s1">Re.Ma </span>
+<br></br>
+<span   className="s2">- - - - - -</span>
 
+</h1>
+ <h6>  <span className="s3">Remote Management</span>
+</h6> 
+ <h6>  <span className="s4"> for SMEs</span>
+</h6> 
+  
+
+</div>
+{/* <div className="logo"></div> */}
+</div>
           <div className="hero-content">
             <h1 className="hero-title">
             Remote Management for SMEs
             </h1>
 <p className="hero-text">
-  A KA210-VET Erasmus+ project for
+  Erasmus+ project for
 Small-scale partnerships in the field of vocational
 education and training about Remote Management         </p>
 <span className="info" onClick={() => {
@@ -31,9 +56,7 @@ education and training about Remote Management         </p>
             
           </div>
        
-          <div className="ream-logo">
-<img src={logo} alt="Rema Logo" />
-</div>
+          
         </div>
      
       </section>
