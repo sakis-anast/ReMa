@@ -1,9 +1,9 @@
-import "../style/Partners.scss"
+import "../style/Partners.scss";
 import MetalaxisModal from "./MetalaxisModal";
 import EcteModal from "./EcteModal";
 import LdiModal from "./LdiModal";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 function Partners() {
   const metalaxis = require("../logos/metalaxis.png");
@@ -13,34 +13,41 @@ function Partners() {
   const [openLdiModal, setOpenLdiModal] = useState(false);
   const [openEcteModal, setOpenEcteModal] = useState(false);
 
-    return (
+  return (
     <>
-    <h2 className="underline">Our Team</h2>
-     <div className="partners-container">
-     <div className="partner-logo">
-<img src={metalaxis} alt="Metalxis Logo" onClick={() => {
+      <h2 className="underline">Our Team</h2>
+      <div className="partners-container">
+        <div className="partner-logo">
+          <img
+            src={metalaxis}
+            alt="Metalxis Logo"
+            onClick={() => {
               setOpenMetalaxisModal(true);
-            }} />
+            }}
+          />
+        </div>
 
-
-</div>
-
-<div className="partner-logo">
-<img src={ldi} alt="Ldi Logo" onClick={() => {
+        <div className="partner-logo">
+          <img
+            src={ldi}
+            alt="Ldi Logo"
+            onClick={() => {
               setOpenLdiModal(true);
-            }} />
+            }}
+          />
+        </div>
 
-
-</div>
-
-<div className="partner-logo">
-<img src={ecte} alt="Ecte Logo" onClick={() => {
+        <div className="partner-logo">
+          <img
+            src={ecte}
+            alt="Ecte Logo"
+            onClick={() => {
               setOpenEcteModal(true);
-            }} />
-</div>
-
-</div>
-<MetalaxisModal
+            }}
+          />
+        </div>
+      </div>
+      <MetalaxisModal
         open={openMetalaxisModal}
         onClose={() => {
           setOpenMetalaxisModal(false);
@@ -59,12 +66,7 @@ function Partners() {
         }}
       />
     </>
+  );
+}
 
-       
-    
-    );
-  }
-  
-  export default Partners;
-
-
+export default Partners;

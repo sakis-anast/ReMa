@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 // import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Navbar from "./components/Navbar";
 //importing components
@@ -22,7 +22,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if(localStorage.getItem("token")){
+    if (localStorage.getItem("token")) {
       if (localStorage.getItem("token")) {
         axios
           .post("http://localhost:3636/user/verify", {
@@ -30,34 +30,53 @@ function App() {
           })
           .then(({ data }) => {
             setUser(data);
-            setLoggedIn(true)
-           
+            setLoggedIn(true);
           })
           .catch((err) => console.error("Error:", err));
       }
     }
-  },[loggedIn]);
+  }, [loggedIn]);
 
-
- 
   return (
     <BrowserRouter>
-      <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn} setAnswers={setAnswers} setUser={setUser} />
-      <ScrollTop/>
+      <Navbar
+        loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn}
+        setAnswers={setAnswers}
+        setUser={setUser}
+      />
+      <ScrollTop />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/signup" element={<SignUp   loggedIn={loggedIn}/> }></Route>
-        <Route path="/survey" element={<Survey  loggedIn={loggedIn} user ={user} setLoggedIn={setLoggedIn}/>}></Route>
+        <Route path="/signup" element={<SignUp loggedIn={loggedIn} />}></Route>
+        <Route
+          path="/survey"
+          element={
+            <Survey loggedIn={loggedIn} user={user} setLoggedIn={setLoggedIn} />
+          }
+        ></Route>
         <Route
           path="/login"
-          element={<Login setLoggedIn={setLoggedIn}   loggedIn={loggedIn} />}
+          element={<Login setLoggedIn={setLoggedIn} loggedIn={loggedIn} />}
         ></Route>
         <Route path="/partners" element={<Partners />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         {/* <Route path="/profile" element={<Profile  loggedIn={loggedIn}  user ={user}/>}></Route> */}
-        <Route path="/answers" element={<Answers  loggedIn={loggedIn}  user ={user} answers={answers} setAnswers={setAnswers} loading={loading} setLoading={setLoading} />}></Route>
+        <Route
+          path="/answers"
+          element={
+            <Answers
+              loggedIn={loggedIn}
+              user={user}
+              answers={answers}
+              setAnswers={setAnswers}
+              loading={loading}
+              setLoading={setLoading}
+            />
+          }
+        ></Route>
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }

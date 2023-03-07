@@ -18,13 +18,12 @@ function Home() {
         
         <div className="hero-container">
         <div className="rema-logo">
-{/* <img src={logo} alt="Rema Logo" /> */}
 <div>
 <svg className="circle1" height="140" width="140">
-	<circle className="circle" cx="70" cy="70" r="66" stroke="#ffffff" stroke-width="5" fill-opacity="0" />
+	<circle className="circle" cx="70" cy="70" r="66" stroke="#ffffff" strokeWidth="5" fillOpacity="0" />
 </svg>
 <svg className="circle2" height="140" width="140">
-	<circle className="circle" cx="70" cy="70" r="66" stroke="#ffffff" stroke-width="5" fill-opacity="0" />
+	<circle className="circle" cx="70" cy="70" r="66" stroke="#ffffff" strokeWidth="5" fillOpacity="0" />
 </svg>
 </div>
 <div className="logo-text" >
@@ -40,7 +39,6 @@ function Home() {
   
 
 </div>
-{/* <div className="logo"></div> */}
 </div>
           <div className="hero-content">
             <h1 className="hero-title">

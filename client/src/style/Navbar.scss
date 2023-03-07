@@ -1,7 +1,15 @@
-.color{
-    background-color: #37517e !important;
+.color {
+  background-color: #37517e !important;
 }
 
-.link-nav-small:hover{
-    color: #37517e !important;
+.link-nav-small:hover {
+  color: #37517e !important;
 }
+.link-nav-small{
+    color: black;
+    text-decoration: none;
+  }
+  .link-nav-big{
+    color: white;
+    text-decoration: none;
+  }

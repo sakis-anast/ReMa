@@ -9,18 +9,15 @@ const userSignup = async (req, res) => {
     let user = await User.findOne({ username: req.body.username });
     let email = await User.findOne({ email: req.body.email });
     if (user) {
-      res.send({ message: "This user already exists" }); 
-    }
-    else if(email){
-      res.send({ message: "This email already been used" }); 
-
-    }
-    else {
+      res.send({ message: "This user already exists" });
+    } else if (email) {
+      res.send({ message: "This email already been used" });
+    } else {
       bcrypt.hash(req.body.password, 10, async (err, hash) => {
         if (hash) {
           let newUser = new User({
             username: req.body.username,
-            email :  req.body.email,
+            email: req.body.email,
             password: hash,
           });
           await newUser.save();
