@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 function Login({ setLoggedIn, setLoading, loggedIn }) {
   const navigate = useNavigate();
   const [type, setType] = useState("password");
-  const [icon, setIcon] = useState(eyeOff);
+  const [icon, setIcon] = useState(eye);
   const login = require("../logos/login.PNG");
   const [email, setEmail] = useState(false);
   const [activeEmail, setActiveEmail] = useState("choice");
@@ -30,10 +30,10 @@ function Login({ setLoggedIn, setLoading, loggedIn }) {
   }, [loggedIn]);
   const handleToggle = () => {
     if (type === "password") {
-      setIcon(eye);
+      setIcon(eyeOff);
       setType("text");
     } else {
-      setIcon(eyeOff);
+      setIcon(eye);
       setType("password");
     }
   };

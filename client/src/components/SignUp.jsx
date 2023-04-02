@@ -12,9 +12,9 @@ function SignUp({ loggedIn }) {
   const navigate = useNavigate();
   const [verify, setVerify] = useState(false);
   const [type, setType] = useState("password");
-  const [icon, setIcon] = useState(eyeOff);
+  const [icon, setIcon] = useState(eye);
   const [type2, setType2] = useState("password");
-  const [icon2, setIcon2] = useState(eyeOff);
+  const [icon2, setIcon2] = useState(eye);
   const login = require("../logos/login.PNG");
   const toastOptions = {
     position: "top-right",
@@ -30,19 +30,19 @@ function SignUp({ loggedIn }) {
   }, [loggedIn]);
   const handleToggle = () => {
     if (type === "password") {
-      setIcon(eye);
+      setIcon(eyeOff);
       setType("text");
     } else {
-      setIcon(eyeOff);
+      setIcon(eye);
       setType("password");
     }
   };
   const handleToggle2 = () => {
     if (type2 === "password") {
-      setIcon2(eye);
+      setIcon2(eyeOff);
       setType2("text");
     } else {
-      setIcon2(eyeOff);
+      setIcon2(eye);
       setType2("password");
     }
   };
