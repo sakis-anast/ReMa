@@ -1,0 +1,135 @@
+.hid {
+  display: none;
+}
+
+
+.grid-answers {
+  background-color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  
+}
+hr {
+  border: 2px solid black;
+
+  width: 100%;
+}
+.dis-ans {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  text-align: center;
+  button {
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #37517e;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  button:hover {
+    background-color: #417bdf;
+    color: white;
+  }
+
+  button:active {
+    background-color: white;
+    color: #37517e;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+}
+.display {
+  width: 70%;
+}
+.background-answers {
+  background-color: #37517e;
+  padding-bottom: 170px;
+}
+.no-answers {
+  background-color: #37517e;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  color: white;
+  text-align: center;
+  min-height: 60vh;
+}
+.download{
+  color:#37517e;
+  cursor: pointer;
+}
+
+@media screen and (width <= 700px) {
+  .display {
+    width: 98%;
+  }
+}
+@media screen and (width <= 600px) {
+  .answers {
+    font-size: 14px;
+    h5{
+      font-size: 16px;
+    }
+  }
+  .background-answers {
+    padding-bottom: 50px;
+  }
+  .no-answers {
+    
+    padding-bottom: 50px;
+ 
+  }
+}
+@media screen and (width <= 500px) {
+  .answers {
+    font-size: 12px;
+    h5{
+      font-size: 14px;
+    }
+  }
+ 
+}
+@media screen and (width <= 400px) {
+  .answers {
+    font-size: 10px;
+    h5{
+      font-size: 12px;
+    }
+  } .background-answers {
+    padding-bottom: 30px;
+  }
+  .no-answers {
+    
+    padding-bottom: 30px;
+ 
+  }
+}
+
+@media screen and (width <= 300px) {
+  .answers {
+    font-size: 8px;
+    h5{
+      font-size: 10px;
+    }
+  }
+  .background-answers {
+    padding-bottom: 20px;
+  }
+  .no-answers {
+    
+    padding-bottom: 20px;
+ 
+  }
+}
+
