@@ -86,23 +86,7 @@ function Footer() {
             <div className="sb_footer_copyright">
               <p>@{new Date().getFullYear()} Rema. All rights reserved</p>
             </div>
-            {/* <div className="sb_footer_below_links">
-              <a href="#">
-                <div>
-                  <p>Terms & Conditions</p>
-                </div>
-              </a>
-              <a href="#">
-                <div>
-                  <p>Privacy</p>
-                </div>
-              </a>
-              <a href="#">
-                <div>
-                  <p>Security</p>
-                </div>
-              </a>
-            </div> */}
+           
           </div>
         </div>
       </div>

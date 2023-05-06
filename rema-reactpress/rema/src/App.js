@@ -9,7 +9,6 @@ import Footer from "./components/Footer";
 import ScrollTop from "./components/ScrollTop";
 import Survey from "./components/Survey";
 
-// import Profile from "./components/Profile";
 import Answers from "./components/Answers";
 function App() {
   const [answers, setAnswers] = useState({empty:true});

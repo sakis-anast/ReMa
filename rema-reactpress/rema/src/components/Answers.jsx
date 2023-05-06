@@ -8,7 +8,6 @@ import Hybrid from "./Hybrid";
 import Physical from "./Physical";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import LoadingSpinner from "./LoadingSpinner";
 import "../style/Answers.scss";
 
 function Answers({  answers }) {
