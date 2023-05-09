@@ -1,11 +1,10 @@
-# Online chat application:shopping:
 
 ### Title: "RE.MA" 
 
 
 
 ### Description:
-A  web application for Small  and Medium Enterprises that creates an action plan based on their remote readiness according  to their answers of a survey (Erasmus+ Project).
+A  web application for Small and Medium Enterprises that creates an action plan based on their remote readiness according  to their answers of a survey (Erasmus+ Project).
  </br>
 
 ### Features:
